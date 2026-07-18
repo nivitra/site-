@@ -1,26 +1,259 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #05080a;
+  --surface: #0a1210;
+  --surface-2: #0e1a15;
+  --foreground: #f2f7f4;
+  --muted: #9db4a8;
+  --brand-950: #04170b;
+  --brand-900: #0a3d1c;
+  --brand-800: #14532d;
+  --brand-700: #15803d;
+  --brand-600: #16a34a;
+  --brand-500: #22c55e;
+  --brand-400: #4ade80;
+  --brand-300: #86efac;
+  --line: rgba(134, 239, 172, 0.12);
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-brand-950: var(--brand-950);
+  --color-brand-900: var(--brand-900);
+  --color-brand-800: var(--brand-800);
+  --color-brand-700: var(--brand-700);
+  --color-brand-600: var(--brand-600);
+  --color-brand-500: var(--brand-500);
+  --color-brand-400: var(--brand-400);
+  --color-brand-300: var(--brand-300);
+  --color-line: var(--line);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), var(--font-indic), "Noto Sans Devanagari", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+/* Native-script runs (Hindi, Marathi, etc.) */
+.font-indic {
+  font-family: var(--font-indic), "Noto Sans Devanagari", var(--font-sans), system-ui, sans-serif;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Accessible skip / screen-reader utilities */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+a.sr-only:focus {
+  position: absolute;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+::selection {
+  background: var(--brand-500);
+  color: #04170b;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #1d3328;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-700);
+}
+
+/* ---------- reusable utilities ---------- */
+
+.text-gradient {
+  background: linear-gradient(100deg, #f2f7f4 20%, #86efac 55%, #22c55e 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.brand-pill {
+  background: linear-gradient(115deg, #0a1420 0%, #0d3b1a 38%, #1f8b35 75%, #35b04a 100%);
+}
+
+.glass {
+  background: rgba(14, 26, 21, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--line);
+}
+
+.card {
+  background: linear-gradient(160deg, rgba(20, 36, 28, 0.6), rgba(8, 14, 11, 0.9));
+  border: 1px solid var(--line);
+}
+
+.card-hover {
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  border-color: rgba(74, 222, 128, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px -20px rgba(34, 197, 94, 0.25);
+}
+
+.grid-bg {
+  background-image: linear-gradient(rgba(134, 239, 172, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(134, 239, 172, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 36s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+}
+
+/* soft breathing glow */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.animate-glow {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+/* anime.js split text helpers — keep words on same baseline */
+.anime-word,
+.anime-letter,
+.word,
+.char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* spotlight cards need rounded clip */
+.spotlight-clip {
+  isolation: isolate;
+}
+
+/* live dot */
+@keyframes ping-soft {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+.live-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: var(--brand-400);
+  animation: ping-soft 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 6px;
+  border-radius: 9999px;
+  background: #16281f;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: var(--brand-400);
+  border: 3px solid #04170b;
+  box-shadow: 0 0 0 2px var(--brand-400), 0 4px 14px rgba(34, 197, 94, 0.5);
+  cursor: grab;
+  transition: transform 0.15s ease;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: var(--brand-400);
+  border: 3px solid #04170b;
+  cursor: grab;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee,
+  .animate-glow,
+  .live-dot::after {
+    animation: none !important;
+  }
+  .card-hover:hover {
+    transform: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

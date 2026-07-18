@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Speaksy — Marketing Website
 
-## Getting Started
+**Voice AI that sounds human. Built in India, beats the world.** 🇮🇳
 
-First, run the development server:
+Production marketing site for Speaksy — **Next.js 16 (App Router) + Tailwind CSS v4 + Framer Motion**. Fully static pages (except the lead API), deploys anywhere (Vercel, Netlify, Node).
+
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # production build (pages prerendered)
+npm start       # serve production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Route | What's on it |
+|---|---|
+| `/` | Hero + interactive call demo (Hinglish / Hindi / Marathi / English / Tamil), stats, language showcase, features, SOTA benchmarks, graph-agent SVG, human handoff, personas, industries, price teaser, integrations marquee, testimonials, FAQ, CTA |
+| `/platform` | 5-layer pipeline explorer, graph & handoff, developer API cards, compliance grid |
+| `/pricing` | 3 tiers, live ROI calculator, comparison table, pricing FAQ |
+| `/solutions` | Use-case cards, industry explorer, how-it-works |
+| `/languages` | Index of all 14 languages |
+| `/languages/[slug]` | SEO-first language pages (native script, sample dialogue, use cases, voices, FAQ + JSON-LD) |
+| `/customers` | 3 long-form case studies with metrics |
+| `/integrations` | Telephony / STT / LLM / TTS / CRM stack |
+| `/about` | Story timeline, values, team |
+| `/careers` | Perks + open roles (mailto apply) |
+| `/blog` + `/blog/[slug]` | 6 long-form posts (locale, engineering, compliance) |
+| `/security` | Trust & compliance |
+| `/contact` | Demo form → `POST /api/leads` |
+| `/privacy`, `/terms` | Legal |
+| `/sitemap.xml`, `/robots.txt` | SEO plumbing |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Design system
 
-## Learn More
+- Colors from the Speaksy logo: near-black green (`#05080a`) with brand gradient `#0a1420 → #35b04a` (`.brand-pill`), accents `brand-300`…`brand-950` in `app/globals.css` `@theme`.
+- Type: Geist Sans / Geist Mono + **Noto Sans Devanagari** for Hindi/Marathi/Hinglish (`.font-indic`).
+- Motion: scroll-reveals, count-ups, layout-animated pills, SVG path-drawing, marquee — all respect `prefers-reduced-motion`.
+- Logos: optimized variants in `public/brand/` (not the multi-MB Canva exports).
 
-To learn more about Next.js, take a look at the following resources:
+## Where things live
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+app/              routes, layout, sitemap, robots, api/leads
+components/       one file per section; ui/ = Reveal, SectionHeading, CountUp
+lib/              languages.ts (14 langs), posts.ts (blog)
+public/brand/     web-optimized logo/icon assets
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Lead form
 
-## Deploy on Vercel
+`components/LeadForm.tsx` validates client-side, then `POST`s to `/api/leads`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Wire a real CRM by setting a webhook inside `app/api/leads/route.ts` (HubSpot, LeadSquared, Slack, etc.). Until then, leads are validated and logged server-side.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Performance notes
+
+- Homepage heavy interactive sections are `next/dynamic` code-split.
+- `framer-motion` is tree-shaken via `optimizePackageImports`.
+- Images use Next.js Image + AVIF/WebP.
+- Brand logos resized to 64–256px (original Canva exports stay in `public/` for print if needed).
