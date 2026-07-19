@@ -71,16 +71,16 @@ export default function HandoffShowcase() {
         <div className="order-1 lg:order-2">
           <SectionHeading
             align="left"
-            eyebrow="Smart Handoff"
-            title="When it matters most, your team takes over."
-            subtitle="When a customer needs personal attention, Speaksy instantly connects them to your team — with full context, so they never have to repeat themselves."
+            eyebrow="Never Lose the Moment"
+            title="The right person steps in at exactly the right time."
+            subtitle="When a customer is ready to decide, Speaksy recognizes it and connects them to your team in seconds — with everything your team needs to close, already on screen."
           />
           <Reveal delay={0.15}>
             <div className="mt-8 grid grid-cols-3 gap-4">
               {[
-                ["Instant", "connection"],
+                ["Instant", "team connection"],
                 ["Zero", "repeated questions"],
-                ["100%", "context shared"],
+                ["100%", "context passed on"],
               ].map(([n, l]) => (
                 <div key={l} className="card rounded-2xl p-4 text-center">
                   <p className="font-mono text-2xl font-semibold text-brand-600">{n}</p>

@@ -72,14 +72,151 @@ export const patterns = [
 
 export const industries: Industry[] = [
   {
+    slug: "ecommerce",
+    name: "E-commerce",
+    fullName: "E-commerce & Retail Brands",
+    icon: "🛒",
+    tag: "COD confirmations, failed delivery resolution, and checkout recovery.",
+    headline: "Recover abandoned sales, secure your checkouts.",
+    tagline:
+      "Instant COD confirmation minutes after checkout, failed-delivery recovery (NDR), cart abandonment follow-up, and return pick-up scheduling—fully integrated with your Shopify/custom OMS to drive unit economics.",
+    sample: {
+      label: "COD order confirmation",
+      agent: "Hi! Your GlowKart order for ₹2,199 is ready to ship to your Andheri address — shall I confirm the cash-on-delivery for Thursday?",
+      user: "Yes, Thursday works.",
+      agent2: "Confirmed! Want to prepay by UPI and save the handling fee? I can send a link — else Thursday COD it is. Thank you!",
+      outcome: "Order verified · address confirmed · prepaid nudge offered · RTO risk cleared",
+    },
+    outcomes: [
+      ["20–30%", "reduction in COD-to-RTO rates"],
+      ["Same-day", "recovery on failed delivery reports (NDR)"],
+      ["12%", "average uplift in checkout recovery rate"],
+    ],
+    groups: [
+      {
+        name: "Order Verification",
+        items: [
+          { title: "COD order confirmation", desc: "Verify intent and address on high-value COD orders — a proven 20–30% RTO reduction, pure ROI." },
+          { title: "Address verification / fixing", desc: "Correct incomplete addresses before dispatch to avoid transport issues." },
+          { title: "Prepaid conversion nudges", desc: "Offer a small incentive to convert COD to UPI on the confirmation call." },
+        ],
+      },
+      {
+        name: "Delivery & Logistics",
+        items: [
+          { title: "NDR resolution calls", desc: "\"Courier couldn't reach you\" — confirm address/reattempt slot and recover the delivery same-day." },
+          { title: "Delivery-slot scheduling", desc: "For large items — furniture and appliances; confirm someone will be home." },
+          { title: "Return / exchange pickup scheduling", desc: "Book the reverse pickup slot and explain the refund timeline." },
+          { title: "Refund status updates", desc: "Read status from the OMS; escalate disputes to humans." },
+        ],
+      },
+      {
+        name: "Engagement & Support",
+        items: [
+          { title: "Abandoned-cart recovery", desc: "For high-AOV carts — capture the blocker and offer assistance or a payment link, assistive not pushy." },
+          { title: "Store & product FAQ", desc: "Availability, store hours and store locator on inbound." },
+          { title: "Installation & demo scheduling", desc: "Appliances and furniture assembly — book the technician slot." },
+          { title: "Post-purchase NPS", desc: "Structured feedback and NPS surveys after purchase." },
+        ],
+      },
+    ],
+    patterns: ["Notify + confirm", "Schedule + reschedule", "Collect structured data", "Fixed-menu offer"],
+    escalation:
+      "Complaints that need goodwill decisions, high-value refund disputes and any negotiation go to a human. The agent confirms, schedules, recovers deliveries and collects feedback — then escalates detractors with full context.",
+    faqs: [
+      {
+        q: "How much RTO can a COD confirmation agent actually save?",
+        a: "Verifying intent and address on high-value COD orders within minutes of checkout is a proven 20–30% RTO reduction. Because it also nudges customers to prepay by UPI, it's one of the clearest pure-ROI use cases in retail.",
+      },
+      {
+        q: "Can it recover failed deliveries?",
+        a: "Yes. On an NDR (non-delivery report), the agent calls the customer, confirms the address and reattempt slot, and recovers the delivery the same day instead of it bouncing back.",
+      },
+      {
+        q: "Does it integrate with our OMS?",
+        a: "Yes. It reads order status live from your OMS, writes back dispositions, and syncs confirmations so your systems stay the single source of truth.",
+      },
+    ],
+    keywords: [
+      "COD confirmation bot", "RTO reduction voice AI", "NDR resolution automation",
+      "ecommerce voice agent India", "shopping cart recovery voice",
+    ],
+  },
+  {
+    slug: "automotive",
+    name: "Automotive",
+    fullName: "Automobile Dealerships & OEM Brands",
+    icon: "🚗",
+    tag: "Service bookings, pickup coordination, and post-service feedback surveys.",
+    headline: "Boost service slots, automate OEM feedback.",
+    tagline:
+      "Dealership service reminders, doorstep pickup/drop coordination, vehicle test-drive bookings, and OEM-mandated post-service feedback—all synced with your Dealer Management System (DMS) in real time.",
+    sample: {
+      label: "Service due reminder",
+      agent: "Hello Amit ji! Aapki Creta ki periodic service kal scheduled hai at 10 AM. Kya hum aapke ghar se pickup arrange kar dein?",
+      user: "Ha, subah 9 baje bhej dena kisi ko.",
+      agent2: "Done! Driver ka name aur number kal subah 8 baje WhatsApp par aa jayega. Thank you!",
+      outcome: "Service booked · pickup arranged · dealer CRM updated",
+    },
+    outcomes: [
+      ["32%", "increase in service slot booking rate"],
+      ["100%", "coverage on post-service feedback calls (PSF)"],
+      ["40%", "fewer no-shows for doorstep vehicle pickups"],
+    ],
+    groups: [
+      {
+        name: "Service & Maintenance",
+        items: [
+          { title: "Service due reminders", desc: "The classic dealership use case — km/time-based; book the slot and arrange pickup/drop." },
+          { title: "Service confirmation & rescheduling", desc: "Confirm the booked service appointment or move it." },
+          { title: "Doorstep pickup/drop coordination", desc: "Confirm address and time window for the vehicle." },
+          { title: "Service status updates", desc: "\"Your car is ready\" or a delay notification with a revised ETA." },
+        ],
+      },
+      {
+        name: "Feedback & Compliance",
+        items: [
+          { title: "Post-service feedback (PSF)", desc: "OEM-mandated structured questionnaire; escalate detractors to the service manager. High-volume, perfect fit." },
+          { title: "Recall / campaign outreach", desc: "Call affected VIN owners at scale and book the mandatory service." },
+        ],
+      },
+      {
+        name: "Sales & Insurance Outreach",
+        items: [
+          { title: "Vehicle insurance renewal reminders", desc: "Expiry alerts, capture renewal interest and route to a human." },
+          { title: "Test-drive booking & reminders", desc: "Qualify budget, model and exchange car, then book the test drive." },
+          { title: "Delivery milestone updates", desc: "Car allotted, in transit and delivery-slot confirmation." },
+          { title: "AMC / extended-warranty alerts", desc: "Inform and capture interest; a human closes the sale." },
+        ],
+      },
+    ],
+    patterns: ["Schedule + reschedule", "Notify + confirm", "Collect structured data", "Fixed-menu offer"],
+    escalation:
+      "Dealer side negotiations, insurance premium calculations, and complex customer complaints are warm-transferred to human team members with full call recordings.",
+    faqs: [
+      {
+        q: "Why is post-service feedback (PSF) a good fit for dealerships?",
+        a: "PSF is OEM-mandated, extremely high-volume and fully structured — a perfect fit. The agent runs the questionnaire consistently and escalates detractors straight to the service manager.",
+      },
+      {
+        q: "Does it integrate with our dealership DMS?",
+        a: "Yes. It reads service status live from your DMS, writes back dispositions, and syncs confirmations so your systems stay the single source of truth.",
+      },
+    ],
+    keywords: [
+      "dealership service reminder AI", "post service feedback calls", "OEM feedback bot",
+      "automotive telecalling automation",
+    ],
+  },
+  {
     slug: "bfsi-lending",
-    name: "BFSI & Lending",
-    fullName: "Banking, Financial Services, Insurance, Cards & Lending",
+    name: "Lending & Collections",
+    fullName: "Banking, Cards & Loan Collections",
     icon: "🏦",
-    tag: "Collections, qualification & servicing — TRAI & RBI-compliant by construction.",
+    tag: "Collections, loan qualification & verification — TRAI & RBI-compliant.",
     headline: "Collections that convert, compliance that holds.",
     tagline:
-      "Loan qualification, EMI reminders, early-bucket collections, KYC and insurance renewals — structured, scripted flows that run inside TRAI windows with DND scrubbing and PII masking on every single dial.",
+      "Loan qualification, early-bucket collections, EMI reminders, document collection, and disbursement welcome calls—completely RBI and TRAI-compliant with built-in PII masking.",
     sample: {
       label: "EMI reminder · pre-delinquency",
       agent: "Namaste Rohan ji! Aapki ₹4,500 ki EMI kal due hai — kya main abhi WhatsApp par payment link bhej du?",
@@ -90,42 +227,32 @@ export const industries: Industry[] = [
     outcomes: [
       ["3.2x", "more payment promises vs SMS-only reminders"],
       ["90%", "connect rate with propensity-based dialing"],
-      ["100%", "TRAI-window & DND-compliant dials"],
+      ["100%", "compliance with RBI & TRAI calling guidelines"],
     ],
     groups: [
       {
-        name: "Lending",
+        name: "Lending Onboarding",
         items: [
           { title: "Loan lead pre-qualification", desc: "Capture income range, employment type, city and loan amount on a fixed question tree; route qualified leads to human advisors." },
           { title: "Incomplete-application follow-up", desc: "Call applicants who dropped off mid-form, identify the blocker, and push a resume link on WhatsApp." },
           { title: "Document collection reminders", desc: "\"Your ITR and Form 16 are still pending\" — and book a doorstep pickup slot." },
           { title: "Loan status updates", desc: "Pull status from the LMS and read it out, deflecting a huge share of inbound call volume." },
+        ],
+      },
+      {
+        name: "Servicing & Reminders",
+        items: [
           { title: "EMI due-date reminders", desc: "Polite pre-delinquency reminders 3–5 days before due date with an instant payment-link push." },
           { title: "Disbursement & welcome calls", desc: "Confirm funds received, explain first EMI date and repayment channels." },
           { title: "Balance-transfer interest check", desc: "Gauge interest, capture current lender and rate, and book a human callback." },
         ],
       },
       {
-        name: "Collections — early stage only",
+        name: "Early Stage Collections",
         items: [
           { title: "Early-bucket collections (1–30 DPD)", desc: "Soft reminder, capture the reason for delay, log the promise-to-pay and send a payment link — RBI Fair-Practices compliant by construction." },
           { title: "Promise-to-pay follow-up", desc: "Confirm the promised payment happened, or reschedule it." },
           { title: "Payment confirmation & receipt calls", desc: "Confirm receipt and answer CIBIL-impact FAQs." },
-        ],
-      },
-      {
-        name: "Cards, accounts & insurance",
-        items: [
-          { title: "Card activation & onboarding", desc: "Walk new cardholders through activation, PIN setup and app download." },
-          { title: "KYC / re-KYC reminders", desc: "Schedule video-KYC or branch slots before the deadline." },
-          { title: "Credit-card due reminders", desc: "With a clear minimum-due vs total-due explanation." },
-          { title: "Insurance renewal reminders", desc: "Lapse alerts, payment link and grace-period explanation." },
-          { title: "Policy-servicing FAQ", desc: "Coverage basics, network-hospital lookup and claim-document checklists (not adjudication)." },
-          { title: "Claim status updates", desc: "Read status from the TPA/insurer API; escalate disputes to humans." },
-          { title: "FD / RD maturity alerts", desc: "Inform maturity date and capture renew-vs-payout preference for a human to execute." },
-          { title: "Fraud-alert verification callbacks", desc: "\"Did you make this transaction?\" with immediate card-block action on a 'no'." },
-          { title: "Dormant-account reactivation", desc: "Inform, gauge intent and book a branch appointment." },
-          { title: "CSAT / NPS surveys", desc: "3–5 question structured feedback after any interaction." },
         ],
       },
     ],
@@ -141,26 +268,143 @@ export const industries: Industry[] = [
         q: "Can the agent take a payment or push a payment link on the call?",
         a: "It doesn't take card details on the call, but it pushes a secure UPI/payment link on WhatsApp mid-conversation and logs the promise-to-pay to your LMS — which is exactly what lifts payment-promise rates over SMS-only reminders.",
       },
-      {
-        q: "What happens when a customer disputes a charge or gets angry?",
-        a: "Disputes and negotiations are out of scope by design. The agent captures the reason, logs the disposition and warm-transfers to a human collections officer with the full context and recording attached.",
-      },
-      {
-        q: "How fast can a lending campaign go live?",
-        a: "With a pre-built EMI-reminder or qualification template, the same day. A custom flow wired to your LMS/CRM typically goes live in 3–5 days, and you can test it on your own phone before the first customer dial.",
-      },
     ],
     keywords: [
       "voice AI collections India", "EMI reminder bot", "loan qualification voice agent",
-      "RBI compliant collections automation", "insurance renewal voice bot", "BFSI voice AI",
+      "RBI compliant collections automation", "BFSI voice AI",
+    ],
+  },
+  {
+    slug: "insurance",
+    name: "Insurance",
+    fullName: "Life, Health & General Insurance",
+    icon: "🛡️",
+    tag: "Renewal reminders, claims FAQ, and policy verification.",
+    headline: "Renewals made simple, claim FAQs answered.",
+    tagline:
+      "Policy renewal reminders, grace-period alerts, welcome-call verification, cashless network lookup, and claim document checklists—saving hours of human overhead while building customer trust.",
+    sample: {
+      label: "Insurance renewal reminder",
+      agent: "Hello Sunita ji! Aapki health insurance policy 5 days mein expire ho rahi hai. 10% discount ke saath renewal payment link abhi WhatsApp par bhej du?",
+      user: "Ha, details WhatsApp pe bhej dijiye.",
+      agent2: "Bhej diya hai ji! Premium secure payment gateway link ke saath text check kijiye. Koi problem ho toh hume bataiyega. Thank you!",
+      outcome: "Renewal interest captured · payment link sent · CRM ticket updated",
+    },
+    outcomes: [
+      ["22%", "improvement in policy renewal rates"],
+      ["65%", "reduction in inbound claim status support calls"],
+      ["Same-day", "document checklist collection via WhatsApp"],
+    ],
+    groups: [
+      {
+        name: "Policy Renewals",
+        items: [
+          { title: "Insurance renewal reminders", desc: "Lapse alerts, premium payment link and grace-period explanation." },
+          { title: "Dormant policy revival", desc: "Call lapsed policyholders, explain benefits / pre-existing waivers, and redirect interest to sales." },
+        ],
+      },
+      {
+        name: "Claim Servicing & FAQs",
+        items: [
+          { title: "Claim status updates", desc: "Read status from the TPA/insurer API; escalate complex disputes to humans." },
+          { title: "Policy-servicing FAQ", desc: "Coverage basics, network-hospital lookup and claim-document checklists (not adjudication)." },
+        ],
+      },
+      {
+        name: "Onboarding & Surveys",
+        items: [
+          { title: "Welcome call & document verification", desc: "Confirm policy details, register nominee details, and schedule medical checks." },
+          { title: "CSAT / NPS surveys", desc: "3–5 question structured feedback after any interaction." },
+        ],
+      },
+    ],
+    patterns: ["Notify + confirm", "Collect structured data", "Answer from a bounded KB"],
+    escalation:
+      "Disputed claims adjudication and policy cancellation processes remain with senior human case managers. The voice assistant is fully informational and serves as a check-in interface.",
+    faqs: [
+      {
+        q: "How does the assistant verify the identity of the customer?",
+        a: "The agent asks for registered details like birth year or PIN validation before sharing policy-specific information to maintain data privacy.",
+      },
+      {
+        q: "What happens when a policyholder wants to discuss claim rejections?",
+        a: "The agent answers basic claims status questions based on the TPA API. For actual rejection disputes, it immediately transfers the call to a human claims specialist.",
+      },
+    ],
+    keywords: [
+      "insurance voice bot", "insurance renewals automated", "claims status voice agent",
+      "TPA support voicebot",
+    ],
+  },
+  {
+    slug: "brokerage-capital-markets",
+    name: "Brokerage & Capital Markets",
+    fullName: "Wealth Management, Demat & Brokerage Platforms",
+    icon: "📈",
+    tag: "Demat onboarding, KYC alerts, and dormant client reactivation.",
+    headline: "Frictionless onboarding, prompt account servicing.",
+    tagline:
+      "Demat account opening help, KYC/re-KYC verification, corporate action notifications, IPO/NFO allotment alerts, and inactive client reactivation—completely SEBI-ready and secure.",
+    sample: {
+      label: "Re-KYC verification reminder",
+      agent: "Hi Vikram! Your Demat account KYC needs re-verification before the end of the month to prevent trading suspension. Can I schedule a 5-minute video KYC slot today?",
+      user: "Sure, let's do it at 3 PM today.",
+      agent2: "Perfect, booked for 3 PM. The video KYC joining link has been sent to your registered email and WhatsApp. Thank you!",
+      outcome: "KYC slot booked · calendar link shared · CRM updated",
+    },
+    outcomes: [
+      ["40%", "faster Demat account activation times"],
+      ["4.5x", "higher response rate on re-KYC requirements vs email"],
+      ["18%", "reactivation rate of dormant trading accounts"],
+    ],
+    groups: [
+      {
+        name: "Onboarding & Compliance",
+        items: [
+          { title: "Demat account setup onboarding help", desc: "Guide users through application drop-offs and collect necessary documentation." },
+          { title: "KYC / re-KYC reminders", desc: "Schedule video-KYC or branch slots before the deadline." },
+        ],
+      },
+      {
+        name: "Account Servicing & Notifications",
+        items: [
+          { title: "FD / RD maturity alerts", desc: "Inform maturity date and capture renew-vs-payout preference for a human to execute." },
+          { title: "Corporate actions notification", desc: "Alert users about stock dividends, stock splits, or rights issues." },
+          { title: "IPO / NFO allotment alerts", desc: "Direct notifications of allotment status with instant dashboard link share." },
+        ],
+      },
+      {
+        name: "Trading Desk Operations",
+        items: [
+          { title: "Inactive account reactivation nudges", desc: "Re-engage passive clients with market updates or targeted brokerage offers." },
+          { title: "Margin call alerts", desc: "Alert clients of collateral requirements in high-volatility situations — TRAI compliant only." },
+        ],
+      },
+    ],
+    patterns: ["Qualify + route", "Schedule + reschedule", "Notify + confirm"],
+    escalation:
+      "No buy/sell trading instructions are executed over the voice agent without human broker authorization. Advising on stock selections and execution of margin liquidations remain strictly human-operated.",
+    faqs: [
+      {
+        q: "Is it compliant with SEBI and exchange guidelines?",
+        a: "Yes. Speaksy does not dispense investment advice or execute trades. It only serves utility alerts, KYC notices, onboarding assistance, and notifications which strictly comply with regulatory requirements.",
+      },
+      {
+        q: "How can it assist with demat account onboarding?",
+        a: "It calls applicants who dropped off during registration, helps clarify documents needed (like PAN or bank statements), and sends direct upload links on WhatsApp.",
+      },
+    ],
+    keywords: [
+      "demat account onboarding voice bot", "KYC voice bot brokerage", "re-KYC calling agent",
+      "stock broker automation voice", "wealth management voice bot",
     ],
   },
   {
     slug: "real-estate",
     name: "Real Estate",
-    fullName: "Real Estate & Property",
-    icon: "🏠",
-    tag: "Instant lead response, site-visit booking and cold-lead revival at scale.",
+    fullName: "Real Estate & Property Development",
+    icon: "🏢",
+    tag: "Instant lead response, site-visit booking and cold-lead revival.",
     headline: "Answer every portal lead in seconds — before it dies.",
     tagline:
       "40%+ of property leads die from slow response. Speaksy calls every 99acres, MagicBricks and Housing inquiry within seconds, qualifies budget and configuration, books the site visit and revives six-month-old CRM leads at scale.",
@@ -220,14 +464,6 @@ export const industries: Industry[] = [
         q: "Can it reduce site-visit no-shows?",
         a: "Yes. Day-before and morning-of confirmation calls are proven to cut site-visit no-shows by 30–45%, and the agent automatically reactivates and rebooks anyone who misses.",
       },
-      {
-        q: "Will it close the booking or negotiate price?",
-        a: "No — and that's deliberate. The agent qualifies, books visits, revives cold leads and answers project FAQs. Negotiation and closing are warm-transferred to your human sales team with full context.",
-      },
-      {
-        q: "Can it revive our old CRM leads?",
-        a: "Yes. It re-qualifies six-month-old lead lists at scale — checking if budget, location and timeline still fit — so your closers only spend time on the ones that came back warm.",
-      },
     ],
     keywords: [
       "real estate voice AI", "property lead qualification bot", "site visit booking automation",
@@ -237,9 +473,9 @@ export const industries: Industry[] = [
   {
     slug: "education",
     name: "Education & EdTech",
-    fullName: "Education, EdTech & Coaching",
+    fullName: "Education, EdTech & Coaching Institutes",
     icon: "🎓",
-    tag: "Admissions, demo bookings, fee reminders and retention nudges.",
+    tag: "Admissions, demo bookings, fee reminders and student retention nudges.",
     headline: "Every lead called in 60 seconds, in their language.",
     tagline:
       "Admission inquiries answered 24/7, demo classes booked and reminded, fee installments nudged, and dormant students re-engaged — at a cost per qualified lead that finally makes EdTech unit economics work.",
@@ -299,14 +535,6 @@ export const industries: Industry[] = [
       {
         q: "Can it improve demo-class attendance?",
         a: "Yes. It books the demo, then sends confirmation calls 24 hours and 1 hour before, and automatically rebooks no-shows — which meaningfully lifts attend rates versus SMS reminders.",
-      },
-      {
-        q: "Is it useful for K-12 schools and coaching, not just EdTech?",
-        a: "Very. Parent communication — attendance alerts, PTM scheduling and fee reminders — is one of the highest-value use cases, alongside student dormancy nudges for retention.",
-      },
-      {
-        q: "Will it close a high-ticket course sale?",
-        a: "No. High-ticket conversion is warm-transferred to a human counselor. The agent qualifies intent, books the counseling call and handles reminders and payments around it.",
       },
     ],
     keywords: [
@@ -380,100 +608,10 @@ export const industries: Industry[] = [
         q: "How does it reduce no-shows?",
         a: "It calls patients 24 hours before with a confirm-or-reschedule prompt, and when a slot frees up it backfills from the waitlist automatically — a proven ~41% no-show reduction versus no reminder.",
       },
-      {
-        q: "Can it book directly into our HMIS?",
-        a: "Yes. It selects department and doctor, books the slot straight into your HMIS, and sends the SMS/WhatsApp confirmation with any prep instructions — 24/7, without extra front-desk staff.",
-      },
-      {
-        q: "Is post-discharge follow-up safe to automate?",
-        a: "It's a proven model when escalation rules are strict. The agent runs a fixed checklist — medication taken, follow-up booked, any red-flag symptom — and immediately routes anything concerning to a human nurse.",
-      },
     ],
     keywords: [
       "healthcare voice AI", "OPD appointment booking bot", "patient reminder calls AI",
       "hospital front desk automation", "post discharge follow up voice agent", "HMIS appointment automation",
-    ],
-  },
-  {
-    slug: "retail-automotive",
-    name: "Retail & Auto",
-    fullName: "Consumer Goods, Retail & Automobiles",
-    icon: "🛒",
-    tag: "COD confirmation, NDR rescue, service reminders and post-service feedback.",
-    headline: "Kill RTO and no-shows before they kill your margins.",
-    tagline:
-      "COD confirmation minutes after checkout, NDR address fixes, delivery scheduling, dealership service reminders and OEM-mandated post-service feedback — synced with your OMS/DMS in real time and proven to recover pure ROI.",
-    sample: {
-      label: "COD order confirmation",
-      agent: "Hi! Your GlowKart order for ₹2,199 is ready to ship to your Andheri address — shall I confirm the cash-on-delivery for Thursday?",
-      user: "Yes, Thursday works.",
-      agent2: "Confirmed! Want to prepay by UPI and save the handling fee? I can send a link — else Thursday COD it is. Thank you!",
-      outcome: "Order verified · address confirmed · prepaid nudge offered · RTO risk cleared",
-    },
-    outcomes: [
-      ["20–30%", "RTO reduction on confirmed COD orders"],
-      ["Same-day", "NDR recovery of failed deliveries"],
-      ["100%", "of post-service feedback calls covered"],
-    ],
-    groups: [
-      {
-        name: "Automotive",
-        items: [
-          { title: "Service due reminders", desc: "The classic dealership use case — km/time-based; book the slot and arrange pickup/drop." },
-          { title: "Service confirmation & rescheduling", desc: "Confirm the booked service appointment or move it." },
-          { title: "Doorstep pickup/drop coordination", desc: "Confirm address and time window for the vehicle." },
-          { title: "Service status updates", desc: "\"Your car is ready\" or a delay notification with a revised ETA." },
-          { title: "Post-service feedback (PSF)", desc: "OEM-mandated structured questionnaire; escalate detractors to the service manager. High-volume, perfect fit." },
-          { title: "Vehicle insurance renewal reminders", desc: "Expiry alerts, capture renewal interest and route to a human." },
-          { title: "Test-drive booking & reminders", desc: "Qualify budget, model and exchange car, then book the test drive." },
-          { title: "Delivery milestone updates", desc: "Car allotted, in transit and delivery-slot confirmation." },
-          { title: "AMC / extended-warranty alerts", desc: "Inform and capture interest; a human closes the sale." },
-          { title: "Recall / campaign outreach", desc: "Call affected VIN owners at scale and book the mandatory service." },
-        ],
-      },
-      {
-        name: "E-commerce & retail",
-        items: [
-          { title: "COD order confirmation", desc: "Verify intent and address on high-value COD orders — a proven 20–30% RTO reduction, pure ROI." },
-          { title: "Address verification / fixing", desc: "Correct incomplete addresses before dispatch." },
-          { title: "NDR resolution calls", desc: "\"Courier couldn't reach you\" — confirm address/reattempt slot and recover the delivery same-day." },
-          { title: "Delivery-slot scheduling", desc: "For large items — furniture and appliances; confirm someone will be home." },
-          { title: "Order status & tracking hotline", desc: "Deflect the #1 support query category on inbound." },
-          { title: "Return / exchange pickup scheduling", desc: "Book the reverse pickup slot and explain the refund timeline." },
-          { title: "Refund status updates", desc: "Read from the OMS; escalate disputes to humans." },
-          { title: "Abandoned-cart recovery", desc: "For high-AOV carts — capture the blocker and offer assistance or a payment link, assistive not pushy." },
-          { title: "Prepaid conversion nudges", desc: "Offer a small incentive to convert COD to UPI on the confirmation call." },
-          { title: "Store & product FAQ", desc: "Availability, store hours and store locator on inbound." },
-          { title: "Installation & demo scheduling", desc: "Appliances and furniture assembly — book the technician slot." },
-          { title: "Warranty & AMC reminders", desc: "Registration and renewal reminder calls." },
-          { title: "Post-purchase NPS", desc: "Structured feedback and NPS surveys after purchase." },
-        ],
-      },
-    ],
-    patterns: ["Notify + confirm", "Schedule + reschedule", "Collect structured data", "Fixed-menu offer"],
-    escalation:
-      "Complaints that need goodwill decisions, high-value refund disputes and any negotiation go to a human. The agent confirms, schedules, recovers deliveries and collects feedback — then escalates detractors with full context.",
-    faqs: [
-      {
-        q: "How much RTO can a COD confirmation agent actually save?",
-        a: "Verifying intent and address on high-value COD orders within minutes of checkout is a proven 20–30% RTO reduction. Because it also nudges customers to prepay by UPI, it's one of the clearest pure-ROI use cases in retail.",
-      },
-      {
-        q: "Can it recover failed deliveries?",
-        a: "Yes. On an NDR (non-delivery report), the agent calls the customer, confirms the address and reattempt slot, and recovers the delivery the same day instead of it bouncing back.",
-      },
-      {
-        q: "Why is post-service feedback (PSF) a good fit for dealerships?",
-        a: "PSF is OEM-mandated, extremely high-volume and fully structured — a perfect fit. The agent runs the questionnaire consistently and escalates detractors straight to the service manager.",
-      },
-      {
-        q: "Does it integrate with our OMS or DMS?",
-        a: "Yes. It reads order/service status live from your OMS or dealership DMS, writes back dispositions, and syncs confirmations so your systems stay the single source of truth.",
-      },
-    ],
-    keywords: [
-      "COD confirmation bot", "RTO reduction voice AI", "NDR resolution automation",
-      "dealership service reminder AI", "post service feedback calls", "ecommerce voice agent India",
     ],
   },
   {
@@ -545,14 +683,6 @@ export const industries: Industry[] = [
       {
         q: "How does it help during a network outage?",
         a: "It makes proactive outbound calls to everyone in the affected area with status updates, which massively deflects the inbound call spike that would otherwise overwhelm your support lines.",
-      },
-      {
-        q: "Can it handle retention and churn without discounting recklessly?",
-        a: "Yes. On a port-out or expiry signal it captures the reason and presents a pre-approved offer from a fixed retention matrix — never an open-ended negotiation. Genuine negotiations route to a human.",
-      },
-      {
-        q: "Can it create tickets in ServiceNow or Jira?",
-        a: "Yes. It logs tickets with the correct category and priority, reads back the ticket number and SLA, and for anything it can't resolve it escalates with a pre-filled ticket attached.",
       },
     ],
     keywords: [
@@ -630,14 +760,6 @@ export const industries: Industry[] = [
       {
         q: "Can it handle NRI travel inquiries across time zones?",
         a: "Yes — that's a strength. It qualifies trip inquiries round the clock, so a customer in a different time zone gets an instant response, matching packages on WhatsApp and a booked callback with a human consultant.",
-      },
-      {
-        q: "Will it give visa advice?",
-        a: "No. It reads back a visa/document checklist — passport validity, photos, forms pending — but any actual visa advice or bespoke itinerary curation is warm-transferred to a human consultant.",
-      },
-      {
-        q: "Does it reduce restaurant and hotel no-shows?",
-        a: "Yes. Day-before confirmation calls for table reservations and hotel arrivals sharply cut no-shows, and the pre-arrival upsell menu adds revenue on the same call.",
       },
     ],
     keywords: [

@@ -17,10 +17,11 @@ const columns = [
     title: "Solutions",
     links: [
       { label: "All Industries", href: "/solutions" },
-      { label: "Finance & Lending", href: "/solutions/bfsi-lending" },
-      { label: "Real Estate", href: "/solutions/real-estate" },
-      { label: "Healthcare", href: "/solutions/healthcare" },
-      { label: "Retail", href: "/solutions/retail-automotive" },
+      { label: "E-commerce", href: "/solutions/ecommerce" },
+      { label: "Automotive", href: "/solutions/automotive" },
+      { label: "Lending & Collections", href: "/solutions/bfsi-lending" },
+      { label: "Insurance", href: "/solutions/insurance" },
+      { label: "Brokerage & Capital", href: "/solutions/brokerage-capital-markets" },
       { label: "Customer Stories", href: "/customers" },
     ],
   },
@@ -43,8 +44,11 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="flex flex-col gap-4">
             <Logo size={36} />
+            <p className="max-w-xs text-sm font-semibold tracking-tight text-foreground">
+              Built In India, Beats The World
+            </p>
             <p className="max-w-xs text-sm leading-relaxed text-muted">
-              AI voice agents that automate customer calls for your business — in 14 Indian languages, 24/7.
+              Your customer calls, handled beautifully — in 14 Indian languages, every hour of the day.
             </p>
             <div className="mt-2 text-xs leading-relaxed text-muted">
               <p>Speak Systems Pvt. Ltd.</p>
@@ -75,7 +79,7 @@ export default function Footer() {
         {/* industry index — internal links for SEO */}
         <div className="mt-14 border-t border-line pt-8">
           <h4 className="mb-4 text-sm font-semibold text-foreground">
-            AI voice agents for your industry
+            Calling solutions for your industry
           </h4>
           <div className="flex flex-wrap gap-x-5 gap-y-2.5">
             {industries.map((i) => (
@@ -94,7 +98,7 @@ export default function Footer() {
         {/* language index — internal links for SEO */}
         <div className="mt-10 border-t border-line pt-8">
           <h4 className="mb-4 text-sm font-semibold text-foreground">
-            AI voice agents in your language
+            Speaks your customer's language
           </h4>
           <div className="flex flex-wrap gap-x-5 gap-y-2.5">
             {languages.map((l) => (

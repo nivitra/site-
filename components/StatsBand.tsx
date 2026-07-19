@@ -6,10 +6,10 @@ import ScrambleOnView from "./ui/ScrambleOnView";
 import Stagger from "./ui/Stagger";
 
 const stats = [
-  { to: 2_000_000, prefix: "", suffix: "+", label: "Calls handled every month", compact: true },
-  { to: 14, prefix: "", suffix: "", label: "Indian languages supported", compact: false },
-  { to: 83, prefix: "", suffix: "%", label: "Customers can't tell it's AI", compact: false },
-  { to: 48, prefix: "", suffix: "hrs", label: "Average time to go live", compact: false },
+  { to: 2_000_000, prefix: "", suffix: "+", label: "Customer calls handled monthly", compact: true },
+  { to: 14, prefix: "", suffix: "", label: "Languages your customers speak", compact: false },
+  { to: 83, prefix: "", suffix: "%", label: "Customers feel they spoke to a person", compact: false },
+  { to: 48, prefix: "", suffix: "hrs", label: "From sign-up to your first live call", compact: false },
 ];
 
 export default function StatsBand() {

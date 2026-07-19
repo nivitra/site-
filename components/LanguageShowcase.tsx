@@ -15,8 +15,8 @@ export default function LanguageShowcase() {
       <div className="relative mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Languages"
-          title="Speak to every customer in their own language."
-          subtitle="Your AI agent converses naturally in 14 Indian languages — with the right accent, the right courtesy, and the right words."
+          title="Every customer, in the language they love."
+          subtitle="Your calling assistant speaks naturally in 14 Indian languages — with the right accent, the right politeness, and the right words for where your customer is from."
         />
 
         {/* language chips */}
@@ -98,7 +98,7 @@ export default function LanguageShowcase() {
         </div>
 
         <p className="mt-8 text-center text-sm text-muted">
-          Every language, same quality, same experience.{" "}
+          Same quality. Same experience. Every language.{" "}
           <Link href="/languages" className="font-semibold text-brand-600 hover:text-brand-700">
             See all 14 languages →
           </Link>

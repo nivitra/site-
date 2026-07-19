@@ -7,33 +7,33 @@ import Stagger from "./ui/Stagger";
 const features = [
   {
     icon: "🗣️",
-    title: "Multilingual Conversations",
-    body: "Your AI agent speaks to every customer in their own language — Hindi, Tamil, Telugu, Marathi, and 10 more — naturally and fluently.",
+    title: "Speaks Every Customer's Language",
+    body: "Your customers feel heard when someone speaks to them in their own language. Hindi, Tamil, Telugu, Marathi, and 10 more — naturally and warmly, every time.",
   },
   {
     icon: "⏰",
-    title: "Always Available",
-    body: "Works 24 hours a day, 7 days a week. No holidays, no sick days, no missed calls. Every customer gets answered instantly.",
+    title: "Open for Business, Always",
+    body: "No holidays, no sick leave, no shifts. Every customer who calls gets answered in seconds — morning, night, Sunday, or public holiday.",
   },
   {
     icon: "🤝",
-    title: "Smart Handoff to Your Team",
-    body: "When a customer needs personal attention, Speaksy connects them to your team instantly — with full context, so nothing gets repeated.",
+    title: "Passes Calls to Your Team Seamlessly",
+    body: "When a customer needs a human touch, Speaksy connects them to your team in seconds — with the full conversation ready, so no one has to repeat themselves.",
   },
   {
     icon: "📊",
-    title: "Real-Time Business Insights",
-    body: "See exactly how every call went — who converted, who needs follow-up, and where your biggest opportunities are.",
+    title: "Know Exactly What's Happening",
+    body: "See every call result at a glance — who's ready to buy, who needs a follow-up, and where you're leaving money on the table.",
   },
   {
     icon: "🛡️",
-    title: "Fully Compliant",
-    body: "Every regulation handled automatically. Calling hours, privacy rules, data protection — so you never have to worry about compliance.",
+    title: "Worry-Free Compliance",
+    body: "All rules followed automatically — calling hours, privacy regulations, data protection. You stay protected without lifting a finger.",
   },
   {
     icon: "💰",
-    title: "Pay Per Minute",
-    body: "Only pay for actual conversations. No monthly minimums, no setup fees, no charges for unanswered calls.",
+    title: "You Only Pay When It Talks",
+    body: "Charged only for real conversations. Zero setup fees, zero monthly minimums, zero charges for calls that don't connect.",
   },
 ];
 
@@ -42,9 +42,9 @@ export default function FeatureGrid() {
     <section className="relative py-28">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          eyebrow="Why Speaksy"
-          title="Everything your team does. At a fraction of the cost."
-          subtitle="One platform to qualify leads, book appointments, follow up on payments, and support customers — automatically."
+          eyebrow="The Speaksy system"
+          title="Not a bot. A full conversation stack."
+          subtitle="Languages, telephony, handoff, analytics, and compliance — one system that qualifies leads, books appointments, chases payments, and supports customers so your team focuses on what only humans can do."
         />
         <Stagger className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (

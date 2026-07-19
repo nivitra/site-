@@ -11,14 +11,14 @@ import SectionHeading from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "Platform",
   description:
-    "Inside the Speaksy voice stack: sub-800ms streaming pipeline, visual graph agents, live human handoff, bring-your-own-telephony and enterprise compliance.",
+    "See how Speaksy works: an intelligent calling assistant that answers, qualifies, books, and follows up — in 14 Indian languages, 24/7, with full handoff to your team when needed.",
   alternates: { canonical: "/platform" },
 };
 
 const devFeatures = [
   {
-    title: "REST APIs & webhooks",
-    body: "Trigger calls, batches and campaigns with a single POST. Receive dispositions, transcripts and recordings on your webhooks the second a call ends.",
+    title: "Connects to any phone setup",
+    body: "Works with your existing phone numbers and provider — no number changes needed. Or we can set up new lines for you. Either way, calls just start going to Speaksy.",
     code: `POST /v1/calls
 {
   "agent_id": "loan-qualifier-v12",
@@ -30,8 +30,8 @@ const devFeatures = [
 }`,
   },
   {
-    title: "Bring your own keys",
-    body: "Plug in your own OpenAI, Anthropic, Deepgram or ElevenLabs credentials and pay providers directly — Speaksy only charges the orchestration layer. Or use our bundled stack for one simple bill.",
+    title: "Plugs into your CRM and calendar",
+    body: "Speaksy sends call results, leads, and booked appointments directly into HubSpot, Zoho, Salesforce, Google Calendar, or any tool your team already uses.",
     code: `PUT /v1/providers
 {
   "stt": "deepgram | sarvam",
@@ -41,8 +41,8 @@ const devFeatures = [
 }`,
   },
   {
-    title: "Batch campaigns",
-    body: "Upload 50,000 leads via CSV or API. Propensity dialing sorts them into optimal hour slots, retries follow your rules, and TRAI/DND scrubbing is automatic.",
+    title: "Calls thousands of leads at once",
+    body: "Upload your contact list and Speaksy calls every person at the right time, follows your retry rules, and skips anyone on do-not-call lists automatically.",
     code: `POST /v1/batches
 {
   "agent_id": "cod-confirm",
@@ -55,21 +55,21 @@ const devFeatures = [
 ];
 
 const compliance = [
-  ["🇮🇳", "Data residency", "All voice data processed and stored on Indian servers — DPDP ready."],
-  ["🔐", "AES-256 at rest", "Every recording, transcript and credential encrypted at rest, TLS 1.3 in transit."],
-  ["🙈", "Real-time PII masking", "PAN, Aadhaar and card numbers redacted from transcripts as they stream."],
-  ["📵", "TRAI & DND enforcement", "Calling windows and DND registry scrubbing enforced at the platform level."],
-  ["🧾", "Audit trails", "Immutable logs of every call, config change and data access for your auditors."],
-  ["✅", "SOC 2 aligned", "Controls mapped to SOC 2 and ISO 27001; reports available under NDA."],
+  ["🇮🇳", "Your data stays in India", "All voice data is processed and stored on servers in India. Your customer information never leaves Indian borders."],
+  ["🔐", "Bank-grade security", "Every call recording, transcript, and account detail is encrypted and protected at all times, both stored and in transit."],
+  ["🙈", "Sensitive information protected", "Personal numbers, financial details, and ID information are automatically removed from call records as conversations happen."],
+  ["📵", "Calling rules enforced automatically", "Calling hours and do-not-call registry rules are enforced at the platform level — no manual work required."],
+  ["🧭", "Complete audit trail", "A permanent, unalterable record of every call, every change, and every data access — ready for your auditors anytime."],
+  ["✅", "Built to the highest standards", "Aligned with SOC 2 and ISO 27001; full compliance documentation available on request."],
 ];
 
 export default function PlatformPage() {
   return (
     <>
       <PageHero
-        eyebrow="Platform"
-        title="The full voice AI stack, engineered end to end."
-        subtitle="Telephony to transcription to reasoning to synthesis to QA — one pipeline, one dashboard, one very small bill. This is the same architecture global platforms charge 3x for."
+        eyebrow="How It Works"
+        title="Your calling assistant, from first hello to final outcome."
+        subtitle="Speaksy handles every part of the conversation — hearing your customer, understanding what they need, responding naturally, and passing the call to your team when the moment is right."
       />
       <Pipeline />
       <GraphShowcase />
@@ -79,9 +79,9 @@ export default function PlatformPage() {
       <section id="integrations" className="py-24">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading
-            eyebrow="For Developers"
-            title="An API your engineers will actually enjoy."
-            subtitle="Everything in the dashboard is available over REST. Go from zero to your first AI call in under ten minutes."
+            eyebrow="Works With Your Stack"
+            title="Plugs into the tools you already use."
+            subtitle="No need to change how you work. Speaksy connects to your existing phone setup, CRM, and calendar — results flow to wherever you need them."
           />
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
             {devFeatures.map((f, i) => (
@@ -105,9 +105,9 @@ export default function PlatformPage() {
       <section className="border-t border-line bg-surface/40 py-24">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading
-            eyebrow="Trust & Compliance"
-            title="Enterprise-grade guardrails, on by default."
-            subtitle="Built for BFSI-grade scrutiny from day one — not bolted on after your infosec review."
+            eyebrow="Security & Compliance"
+            title="Your business protected. Your customers trusted."
+            subtitle="Every call Speaksy makes follows the law automatically — no manual monitoring, no compliance headaches, no risk."
           />
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {compliance.map(([icon, title, body], i) => (

@@ -7,23 +7,23 @@ import SpotlightCard from "./ui/SpotlightCard";
 const results = [
   {
     number: "24.5%",
-    label: "Lead Conversion Rate",
-    desc: "Percentage of calls that result in a qualified lead or booked appointment.",
+    label: "Leads That Become Customers",
+    desc: "Nearly 1 in 4 calls results in a qualified lead or confirmed appointment — without your team lifting a finger.",
   },
   {
     number: "83%",
-    label: "Human-Pass Rate",
-    desc: "Customers who completed calls without realizing they were speaking to AI.",
+    label: "Customers Feel They Spoke to a Person",
+    desc: "8 out of 10 customers complete their call without realizing they spoke to an AI. That's how natural it sounds.",
   },
   {
     number: "4.8/5",
-    label: "Customer Satisfaction",
-    desc: "Average post-call satisfaction rating from customers interacting with Speaksy.",
+    label: "Customer Satisfaction Score",
+    desc: "Customers consistently rate their experience highly — because fast, friendly service in their own language just feels right.",
   },
   {
     number: "68%",
-    label: "Cost Reduction",
-    desc: "Average savings compared to traditional call centers and global AI platforms.",
+    label: "Lower Cost Than a Call Centre",
+    desc: "Businesses switching to Speaksy save an average of 68% on their calling costs — with better results.",
   },
 ];
 
@@ -32,9 +32,9 @@ export default function Benchmarks() {
     <section id="benchmarks" className="relative py-28">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          eyebrow="Results"
-          title="The results speak for themselves."
-          subtitle="Real outcomes from real businesses using Speaksy every day."
+          eyebrow="Proven Results"
+          title="Numbers that matter to your bottom line."
+          subtitle="Real outcomes measured across real businesses that use Speaksy every day."
         />
         <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {results.map((r, i) => (

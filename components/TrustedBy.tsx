@@ -1,19 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { animate, stagger } from "animejs";
 import Reveal from "./ui/Reveal";
-
-const brands = [
-  { name: "LoanKart", sector: "Finance" },
-  { name: "GlowKart", sector: "Retail" },
-  { name: "VidyaPrime", sector: "Education" },
-  { name: "MediBook", sector: "Healthcare" },
-  { name: "SwiftShip", sector: "Logistics" },
-  { name: "PolicyMitra", sector: "Insurance" },
-  { name: "UrbanNest", sector: "Real Estate" },
-  { name: "FreshDaily", sector: "Commerce" },
-];
+import { customerCases } from "@/lib/customers";
+import { industries } from "@/lib/industries";
 
 export default function TrustedBy() {
   const gridRef = useRef<HTMLDivElement>(null);
@@ -46,7 +38,7 @@ export default function TrustedBy() {
           onComplete: () => items.forEach((el) => (el.style.willChange = "auto")),
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
     io.observe(root);
     return () => io.disconnect();
@@ -57,21 +49,42 @@ export default function TrustedBy() {
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
           <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.25em] text-muted">
-            Trusted by growing businesses across India
+            Proven across industries · Built In India, Beats The World
           </p>
         </Reveal>
-        <div ref={gridRef} className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
-          {brands.map((b) => (
-            <div
-              key={b.name}
+
+        {/* Customer stories already on /customers — logos as navigation + proof */}
+        <div ref={gridRef} className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {customerCases.map((c) => (
+            <Link
+              key={c.company}
+              href="/customers"
               data-brand
-              className="group flex flex-col items-center gap-1"
+              className="group card flex flex-col items-center gap-1 rounded-2xl px-5 py-5 text-center transition-colors hover:border-brand-600/25"
             >
-              <span className="text-lg font-bold tracking-tight text-foreground/40 transition-colors duration-300 group-hover:text-brand-600">
-                {b.name}
+              <span className="text-base font-bold tracking-tight text-foreground/50 transition-colors duration-300 group-hover:text-brand-600">
+                {c.company}
               </span>
-              <span className="text-[10px] uppercase tracking-wider text-muted/50">{b.sector}</span>
-            </div>
+              <span className="text-[11px] text-muted">{c.sector}</span>
+              <span className="mt-1 text-[12px] font-semibold text-brand-600">
+                {c.results[0][0]} {c.results[0][1]}
+              </span>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+          {industries.map((ind) => (
+            <Link
+              key={ind.slug}
+              href={`/solutions/${ind.slug}`}
+              className="text-xs text-muted transition-colors hover:text-brand-600"
+            >
+              <span className="mr-1" aria-hidden>
+                {ind.icon}
+              </span>
+              {ind.name}
+            </Link>
           ))}
         </div>
       </div>

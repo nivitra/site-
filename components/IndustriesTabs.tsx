@@ -16,8 +16,8 @@ export default function IndustriesTabs() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Industries"
-          title="Built for every industry."
-          subtitle="See how businesses like yours use Speaksy to automate customer calls and grow faster."
+          title="Made for your kind of business."
+          subtitle="See how companies just like yours use Speaksy to handle customer calls and grow without growing their headcount."
         />
 
         <div className="mt-12 flex flex-wrap justify-center gap-2">
@@ -58,7 +58,7 @@ export default function IndustriesTabs() {
                 <p className="leading-relaxed text-muted">{ind.tagline}</p>
                 <div className="mt-2 rounded-2xl border border-brand-600/15 bg-brand-600/5 p-5">
                   <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-brand-600">
-                    What your AI agent sounds like
+                    Hear how it sounds for your industry
                   </p>
                   <p className="text-sm italic leading-relaxed text-foreground/80">
                     &ldquo;{ind.sample.agent}&rdquo;

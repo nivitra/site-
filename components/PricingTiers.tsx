@@ -5,36 +5,36 @@ const tiers = [
   {
     name: "Starter",
     price: "₹0",
-    unit: "to begin",
+    unit: "to get started",
     tag: "Try it free",
     highlight: false,
     cta: "Start Free",
-    blurb: "For testing your first agent on real calls.",
+    blurb: "Experience it yourself before spending a rupee.",
     features: [
-      "100 free live minutes",
-      "1 voice agent, all languages",
-      "Visual graph builder",
-      "Bundled STT · LLM · TTS stack",
-      "Call logs, recordings & transcripts",
+      "100 free live minutes included",
+      "1 assistant, all 14 languages",
+      "Full conversation builder access",
+      "All-in-one calling, listening & speaking",
+      "Call recordings & full transcripts",
       "Email support",
     ],
   },
   {
     name: "Growth",
-    price: "₹3.99",
+    price: "₹4.75–5.0",
     unit: "per live minute",
     tag: "Most popular",
     highlight: true,
     cta: "Book a Demo",
-    blurb: "For teams running real campaigns at scale.",
+    blurb: "For businesses running serious calling campaigns.",
     features: [
       "Everything in Starter",
-      "Unlimited agents & campaigns",
-      "Batch dialing with propensity queue",
-      "Live human handoff (<1.5s)",
-      "Bring your own telephony & keys",
-      "WhatsApp / SMS / email triggers",
-      "CRM integrations & webhooks",
+      "Unlimited assistants & campaigns",
+      "Bulk calling with smart scheduling",
+      "Instant team handoff (under 1.5 seconds)",
+      "Use your existing phone provider",
+      "WhatsApp, SMS & email follow-ups",
+      "Connect your CRM or any business tool",
       "Priority support on WhatsApp",
     ],
   },
@@ -45,16 +45,16 @@ const tiers = [
     tag: "Best rates",
     highlight: false,
     cta: "Talk to Sales",
-    blurb: "For BFSI-scale volumes and strict compliance.",
+    blurb: "For high-volume operations with strict requirements.",
     features: [
       "Everything in Growth",
-      "Volume discounts below ₹3/min",
-      "Sub-accounts & reseller markups",
-      "Private VPC / on-prem deployment",
+      "Best per-minute rates at volume",
+      "Multi-team & reseller accounts",
+      "Private hosting if required",
       "Custom voice cloning",
-      "99.99% uptime SLA",
+      "99.99% uptime guarantee",
       "Dedicated success manager",
-      "SOC 2 / ISO reports under NDA",
+      "Full compliance documentation",
     ],
   },
 ];
@@ -114,8 +114,12 @@ export default function PricingTiers() {
         </div>
         <Reveal delay={0.2}>
           <p className="mt-8 text-center text-sm text-muted">
-            All plans bill per <span className="font-semibold text-brand-300">live-call second</span> —
-            ringing, dead air and failed connects are never charged. No setup fees. No annual lock-in.
+            All plans bill per{" "}
+            <span className="font-semibold text-brand-300">actual conversation second</span>{" "}—
+            ringing, silent pauses and failed connections are never charged. No setup fees. No annual lock-in.
+          </p>
+          <p className="mt-4 text-center text-sm font-semibold text-brand-400">
+            Handling 300+ calls daily? We offer the best pricing. <a href="/contact" className="underline underline-offset-2 hover:text-brand-300">Talk to us →</a>
           </p>
         </Reveal>
       </div>

@@ -1,10 +1,12 @@
 import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import TrustedBy from "@/components/TrustedBy";
-import StatsBand from "@/components/StatsBand";
 import FeatureGrid from "@/components/FeatureGrid";
 import PriceTeaser from "@/components/PriceTeaser";
 import CTASection from "@/components/CTASection";
+import ResultsCarousel from "@/components/ResultsCarousel";
+import SecurityStrip from "@/components/SecurityStrip";
+import CompareTable from "@/components/CompareTable";
 
 // Heavy interactive sections — code-split so first paint stays lean
 const LanguageShowcase = dynamic(() => import("@/components/LanguageShowcase"), {
@@ -37,18 +39,25 @@ function SectionSkeleton() {
   );
 }
 
+/**
+ * Homepage trust ladder (blueprint §6.4 / §7.5):
+ * Attention → Recognition → Evidence → Proof → Validation →
+ * System → Comparison → Credentials → FAQ → Conversion
+ */
 export default function Home() {
   return (
     <>
       <Hero />
       <TrustedBy />
-      <StatsBand />
+      <ResultsCarousel />
       <FeatureGrid />
       <GraphShowcase />
       <LanguageShowcase />
       <IndustriesTabs />
       <HandoffShowcase />
       <Benchmarks />
+      <CompareTable />
+      <SecurityStrip />
       <PriceTeaser />
       <IntegrationsMarquee />
       <Personas />

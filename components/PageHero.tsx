@@ -33,7 +33,7 @@ export default function PageHero({
   }, []);
 
   return (
-    <section className="grid-bg relative overflow-hidden pb-10 pt-40">
+    <section className="grid-bg relative overflow-hidden pb-10 pt-44">
       <div className="pointer-events-none absolute -top-40 left-1/2 h-[420px] w-[800px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(34,197,94,0.14),transparent)] animate-glow" />
       <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-5 px-6 text-center">
         <ScrambleOnView

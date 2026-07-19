@@ -9,24 +9,24 @@ const personas = [
     id: "owner",
     label: "Business Owners",
     icon: "🏪",
-    heading: "Think of it as your best employee — times a thousand.",
+    heading: "Your most dependable employee — and it works every single day.",
     points: [
-      ["What it does", "Speaksy is an AI agent that makes and answers phone calls for your business. It talks naturally in Hindi, Marathi, Telugu, or whichever language your customers speak."],
-      ["What it's for", "Reminding customers to pay, confirming orders, calling every new enquiry within a minute, booking appointments — all the calls your team never has time for."],
-      ["What it costs", "About ₹4 for every minute of actual conversation. No salaries, no attrition, no missed calls. It works nights, weekends, and holidays."],
-      ["How you start", "Tell us what your team says today. We set it up, you hear it call your own phone, and if you like it — it starts calling customers within days."],
+      ["What it does", "Speaksy is a calling assistant that handles inbound and outbound calls for your business. It speaks naturally in Hindi, Marathi, Telugu, or whichever language your customers prefer."],
+      ["What it handles", "Payment reminders, order confirmations, new lead follow-ups, appointment bookings — all the calls your team never has enough time for."],
+      ["What it costs", "Around ₹4 for every minute of real conversation. No salaries, no attrition, no sick days. It works nights, weekends, and public holidays without complaint."],
+      ["How to begin", "Tell us how your team currently handles calls. We build your assistant, you hear it call your own phone, and if it feels right — it's live and calling customers within days."],
     ],
   },
   {
     id: "ops",
     label: "Operations Leaders",
     icon: "📈",
-    heading: "Your entire calling operation — simplified into one dashboard.",
+    heading: "Your entire calling operation, simplified into one clear view.",
     points: [
-      ["Scale", "Handle thousands of calls simultaneously. Every lead gets touched within minutes, every day, without adding headcount."],
-      ["Quality", "Every call is automatically reviewed on quality, compliance, and outcomes. No more random sampling — 100% visibility."],
-      ["Efficiency", "AI handles the volume; your top performers focus on the conversations that matter most. Your team becomes a closing team."],
-      ["ROI", "Businesses typically cut their cost-per-outcome by 50–70% while improving connection and conversion rates."],
+      ["Scale without limits", "Handle thousands of calls at once. Every new lead is reached within minutes, every day, without adding a single person to your payroll."],
+      ["Full quality visibility", "Every call is automatically reviewed for quality, compliance, and outcome. No more random call sampling — 100% of conversations monitored."],
+      ["A smarter team", "Your assistant handles the volume; your best people focus on conversations that actually need them. Your team becomes a closing team."],
+      ["Real cost savings", "Businesses typically reduce their cost per outcome by 50–70% while seeing higher connection rates and better conversion results."],
     ],
   },
 ];
@@ -40,8 +40,8 @@ export default function Personas() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Who It's For"
-          title="Built for the people who run businesses."
-          subtitle="Whether you're a founder or an operations leader, Speaksy speaks your language."
+          title="Designed for the people who drive business."
+          subtitle="Whether you run the business or run the operations, Speaksy makes your calling effortless."
         />
 
         <div className="mt-12 flex flex-wrap justify-center gap-3">

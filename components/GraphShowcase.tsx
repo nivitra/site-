@@ -7,20 +7,20 @@ import SectionHeading from "./ui/SectionHeading";
 const steps = [
   {
     num: "01",
-    title: "Tell us your script",
-    desc: "Describe how you want your AI agent to greet customers, what questions to ask, and what actions to take. We handle the rest.",
+    title: "Tell us how your business talks",
+    desc: "Share how your team currently handles calls — what you say, what you ask, what action follows. You don't need to write a single line of code.",
     color: "bg-brand-600",
   },
   {
     num: "02",
-    title: "We build your agent",
-    desc: "Our team configures your AI agent with your exact conversation flow, connects it to your systems, and tests it thoroughly.",
+    title: "We set everything up for you",
+    desc: "Our team builds your calling assistant, sets it up to match your workflow, and tests it until it sounds exactly right.",
     color: "bg-brand-500",
   },
   {
     num: "03",
-    title: "Watch it work",
-    desc: "Your AI agent starts making and receiving calls immediately. Monitor results in real-time and refine as you go.",
+    title: "Sit back and watch results pour in",
+    desc: "Your assistant begins handling calls immediately. Track every outcome live and fine-tune as you grow — with our team beside you.",
     color: "bg-brand-400",
   },
 ];
@@ -40,8 +40,8 @@ export default function GraphShowcase() {
       <div className="relative mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="How It Works"
-          title="Live in 3 simple steps."
-          subtitle="No technical setup required. We take care of everything so you can focus on your business."
+          title="Up and running in 3 simple steps."
+          subtitle="No technical knowledge needed. We handle everything so you can focus entirely on your business."
         />
 
         <motion.div
@@ -69,7 +69,7 @@ export default function GraphShowcase() {
             <div className="flex items-center gap-4">
               <div className="h-0.5 w-24 bg-gradient-to-r from-transparent to-brand-600/30" />
               <span className="rounded-full bg-brand-600/10 px-4 py-1.5 text-xs font-semibold text-brand-600">
-                Most businesses go live in under 48 hours
+                Most businesses are live and taking calls within 48 hours
               </span>
               <div className="h-0.5 w-24 bg-gradient-to-l from-transparent to-brand-600/30" />
             </div>

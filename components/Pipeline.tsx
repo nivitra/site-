@@ -8,52 +8,52 @@ const layers = [
   {
     id: "telephony",
     n: "01",
-    name: "Telephony Layer",
-    latency: "carrier-grade",
-    short: "SIP/RTP bridges to any carrier",
+    name: "Your Phone Lines",
+    latency: "instant",
+    short: "Works with any phone provider in India",
     detail:
-      "Twilio, Exotel, Plivo, Airtel IQ or your own SIP trunk terminate into Speaksy's session border controllers. G.711/Opus transcoding, 10,000+ concurrent channels, TRAI window enforcement before a single packet flows.",
-    chips: ["BYOT / SIP", "10k+ concurrent", "DND scrub"],
+      "Speaksy connects directly to your existing phone setup — whether that's Exotel, Airtel, or any other provider. Your numbers stay the same. Calls come in or go out exactly as they do today, just answered by your AI assistant.",
+    chips: ["Any provider", "No number change", "Do-not-call list enforcement"],
   },
   {
     id: "asr",
     n: "02",
-    name: "Streaming Speech Recognition",
-    latency: "<200ms",
-    short: "Indic ASR tuned on real call audio",
+    name: "Listening & Understanding",
+    latency: "under 0.2s",
+    short: "Hears your customer clearly, in any Indian language",
     detail:
-      "Audio is packetized into 20ms chunks and streamed to ASR models fine-tuned on millions of minutes of Indian telephone audio — 8kHz, noisy lines, code-switched Hinglish. Voice activity detection fires interrupt signals the instant your customer starts speaking.",
-    chips: ["20ms chunks", "Hinglish native", "VAD interrupts"],
+      "The moment your customer speaks, Speaksy begins listening. It understands Hindi, Marathi, Tamil, Telugu, and 10 more — including mixed Hinglish. It even picks up the moment a customer starts talking mid-sentence and responds naturally.",
+    chips: ["14 languages", "Understands Hinglish", "Responds to interruptions"],
   },
   {
     id: "dialogue",
     n: "03",
-    name: "Graph Dialogue Engine",
-    latency: "<300ms",
-    short: "Deterministic state machine + LLM routing",
+    name: "Understanding What They Need",
+    latency: "under 0.3s",
+    short: "Knows what to say next, every time",
     detail:
-      "Your visual graph is compiled into an immutable versioned state machine. Router nodes call low-latency LLMs to classify intent and pick edges; static nodes serve pre-synthesized audio from cache for zero-cost, zero-latency playback. Variables like {{name}} and {{emi_amount}} resolve per call.",
-    chips: ["Versioned graphs", "Intent routing", "Audio cache"],
+      "Speaksy follows the conversation flow you defined — your words, your logic, your rules. It understands what the customer is asking, picks the right response, and fills in personal details like the customer's name or account balance naturally.",
+    chips: ["Follows your script", "Remembers context", "Personalised responses"],
   },
   {
     id: "tts",
     n: "04",
-    name: "Neural Voice Synthesis",
-    latency: "<150ms TTFB",
-    short: "Human-grade Indic voices",
+    name: "Speaking Back",
+    latency: "under 0.15s",
+    short: "Sounds like a real person, in your customer's language",
     detail:
-      "Streaming TTS with sub-150ms time-to-first-byte in voices rated 4.8+ MOS for naturalness. Regional accents, emotional prosody, correct number/date reading in every language. Provider fallbacks mean a vendor 503 never drops your call.",
-    chips: ["4.8+ MOS", "10+ languages", "Auto fallback"],
+      "Speaksy responds in a warm, natural voice rated 4.8 out of 5 for naturalness. It reads numbers, dates, and amounts correctly in every language — with the right accent and tone. If one provider has a hiccup, it switches to another automatically.",
+    chips: ["4.8/5 naturalness", "14+ languages", "Automatic backup"],
   },
   {
     id: "qa",
     n: "05",
-    name: "QA & Outcome Analytics",
+    name: "Tracking & Reporting",
     latency: "real-time",
-    short: "Every call audited, scored, attributed",
+    short: "Every call result, instantly in your dashboard",
     detail:
-      "A 23-parameter auto-QA engine scores every conversation: script adherence, sentiment, compliance phrases, interruption handling. PII is masked in real time. Dispositions, costs and outcomes stream to your dashboard and webhooks the moment a call ends.",
-    chips: ["23-param QA", "PII masking", "Webhooks"],
+      "Every call is automatically reviewed: did it follow the right flow, was the customer satisfied, was anything said incorrectly? Results, recordings, and outcomes stream to your dashboard the moment each call ends — 100% of calls, not a sample.",
+    chips: ["100% call review", "Private data protected", "Instant results"],
   },
 ];
 
@@ -64,9 +64,9 @@ export default function Pipeline() {
     <section className="py-24">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          eyebrow="The Speaksy Stack"
-          title="Five layers. One round trip under 800 milliseconds."
-          subtitle="Hover any layer to see how the pipeline keeps conversations feeling instant — even on a noisy 8kHz phone line in Tier-3 India."
+          eyebrow="Under the Hood"
+          title="What happens in the half-second between 'Hello' and the reply."
+          subtitle="Click any stage to see what's happening behind the scenes — it's what makes every conversation feel instant and natural."
         />
         <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_1.1fr]">
           <div className="flex flex-col gap-3">
@@ -145,7 +145,7 @@ export default function Pipeline() {
         {/* latency budget bar */}
         <div className="card mt-10 rounded-2xl p-6">
           <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted">
-            Round-trip latency budget — customer stops speaking → agent replies
+            From your customer&apos;s last word to Speaksy&apos;s first reply
           </p>
           <div className="flex h-9 w-full overflow-hidden rounded-full font-mono text-[10px] font-bold">
             <motion.div
@@ -155,7 +155,7 @@ export default function Pipeline() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="flex items-center justify-center bg-brand-900 text-brand-300"
             >
-              ASR 200ms
+              Listening 200ms
             </motion.div>
             <motion.div
               initial={{ flexGrow: 0 }}
@@ -164,7 +164,7 @@ export default function Pipeline() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="flex items-center justify-center bg-brand-700 text-white"
             >
-              DIALOGUE 300ms
+              Thinking 300ms
             </motion.div>
             <motion.div
               initial={{ flexGrow: 0 }}
@@ -173,7 +173,7 @@ export default function Pipeline() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="flex items-center justify-center bg-brand-500 text-brand-950"
             >
-              TTS 150ms
+              Speaking 150ms
             </motion.div>
             <motion.div
               initial={{ flexGrow: 0 }}
@@ -182,11 +182,11 @@ export default function Pipeline() {
               transition={{ duration: 0.8, delay: 0.7 }}
               className="flex items-center justify-center bg-brand-300 text-brand-950"
             >
-              NETWORK 150ms
+              Delivery 150ms
             </motion.div>
           </div>
           <p className="mt-4 text-center font-mono text-sm font-semibold text-brand-400">
-            = 800ms total · faster than a human picks up a pen
+            = 800ms total · your customer barely notices the pause
           </p>
         </div>
       </div>

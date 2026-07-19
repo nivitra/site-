@@ -9,15 +9,15 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import { industries, patterns } from "@/lib/industries";
 
 export const metadata: Metadata = {
-  title: "Solutions — Voice AI Use Cases by Industry",
+  title: "Solutions — What Speaksy Can Do for Your Business",
   description:
-    "150+ production-ready voice AI use cases across 7 industries — BFSI & lending, real estate, EdTech, healthcare, retail & automotive, telecom & IT, and travel & hospitality. Lead qualification, collections, COD confirmation, appointment booking and more.",
+    "150+ ready-to-use calling scenarios across 7 industries — from finance and healthcare to retail and education. Lead follow-ups, appointment booking, order confirmation, collections and more.",
   alternates: { canonical: "/solutions" },
   keywords: [
-    "voice AI use cases India",
-    "AI calling agent solutions",
-    "industry voice bot templates",
-    "voice AI for BFSI healthcare real estate",
+    "AI calling solutions India",
+    "business phone automation",
+    "customer call assistant",
+    "voice AI for finance healthcare retail",
   ],
 };
 
@@ -29,47 +29,47 @@ const totalUseCases = industries.reduce(
 const useCases = [
   {
     icon: "🎯",
-    title: "Lead qualification",
-    body: "Call every inbound lead within 60 seconds, qualify with your exact criteria, and push hot leads to your sales team's calendar — with the recording attached in your CRM.",
+    title: "Follow up on every new lead",
+    body: "Call every new enquiry within 60 seconds, ask the right qualifying questions, and send only the hot leads to your sales team — with the recording already in your CRM.",
     kpi: "2.7x more qualified meetings",
   },
   {
     icon: "💰",
-    title: "Collections & reminders",
-    body: "EMI dues, policy renewals, fee payments. Capture promises-to-pay, send payment links on WhatsApp mid-call, and auto-schedule retries for non-connects.",
-    kpi: "3.2x payment promises",
+    title: "Payment reminders & collections",
+    body: "EMI dues, renewal notices, fee payments. Capture promises to pay, send payment links during the call, and automatically retry customers who didn't pick up.",
+    kpi: "3.2x more payment commitments",
   },
   {
     icon: "📦",
-    title: "COD & order confirmation",
-    body: "Confirm cash-on-delivery orders minutes after checkout, verify addresses on NDR, and rescue abandoned carts with a friendly voice nudge.",
-    kpi: "38% lower RTO",
+    title: "Order confirmation & delivery",
+    body: "Confirm cash-on-delivery orders immediately after checkout, verify addresses on missed deliveries, and win back customers who didn't complete their purchase.",
+    kpi: "38% fewer failed deliveries",
   },
   {
     icon: "📅",
-    title: "Appointment booking",
-    body: "Book, confirm, reschedule — synced live with Google Calendar or your HMS/CRM. Send reminders that actually get picked up, because they're calls.",
+    title: "Appointment booking & reminders",
+    body: "Book, confirm, and reschedule — synced live with your calendar. Send voice reminders that customers actually answer, because a call feels personal.",
     kpi: "41% fewer no-shows",
   },
   {
     icon: "🎧",
-    title: "Inbound support automation",
-    body: "Replace IVR trees ('press 1 for…') with natural conversation. Resolve order status, KYC steps and FAQs instantly; hand off complex cases to humans with context.",
-    kpi: "70% queries deflected",
+    title: "Inbound customer support",
+    body: "Replace press-1-for-billing menus with real conversation. Answer order status, common questions, and routine requests instantly — and transfer anything complex to your team.",
+    kpi: "70% of queries handled instantly",
   },
   {
     icon: "📋",
-    title: "Surveys & feedback",
-    body: "Post-delivery NPS, CSAT, exit interviews and market research at a scale and cost SMS could never match — with sentiment analysis on every answer.",
-    kpi: "5x survey completion",
+    title: "Customer feedback & surveys",
+    body: "Post-delivery satisfaction checks, NPS calls, exit interviews — at a scale and cost no other channel can match, with automatic sentiment analysis on every response.",
+    kpi: "5x survey completion rate",
   },
 ];
 
 const steps = [
-  ["01", "Pick a template", "Start from a battle-tested industry agent or a blank graph. Write your script in any language — or paste your existing telecaller script."],
-  ["02", "Connect your stack", "Point your telephony, CRM and calendar at Speaksy. Upload leads via CSV or fire our API from your backend."],
-  ["03", "Test with your own phone", "Call the agent yourself, interrupt it, argue with it, switch languages mid-sentence. Tune until it feels right."],
-  ["04", "Launch & watch outcomes", "Go live in days, not months. Dispositions, recordings and QA scores stream into your dashboard in real time."],
+  ["01", "Pick your starting point", "Choose from a ready-made template for your industry or start from scratch. Paste in your current telecaller script if you have one."],
+  ["02", "Connect your business tools", "Link your phone setup, CRM, and calendar. Upload your contacts via file or connect your system directly."],
+  ["03", "Try it yourself first", "Call the assistant yourself. Interrupt it, push back, switch languages. Adjust until it sounds exactly like your business."],
+  ["04", "Go live and track results", "Launch in days. See call outcomes, recordings, and quality scores stream into your dashboard in real time."],
 ];
 
 export default function SolutionsPage() {
@@ -94,8 +94,8 @@ export default function SolutionsPage() {
 
       <PageHero
         eyebrow="Solutions"
-        title="Wherever a phone call moves money, Speaksy works."
-        subtitle={`${totalUseCases}+ production-ready use cases across 7 industries — tuned on real Indian conversations, live in days, with a human always one warm handoff away.`}
+        title="Every call that moves your business forward."
+        subtitle={`${totalUseCases}+ ready-to-use scenarios across 7 industries — built on real Indian business conversations, live within days, always with a human available when needed.`}
       />
 
       {/* industry directory — the SEO + navigation backbone */}
@@ -133,9 +133,9 @@ export default function SolutionsPage() {
       <section className="border-t border-line py-20">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading
-            eyebrow="By use case"
-            title="Six calling problems, solved out of the box."
-            subtitle="The same battle-tested flows show up in every industry. Start from one and make it yours."
+            eyebrow="By Use Case"
+            title="The six calling tasks every business needs handled."
+            subtitle="These are the most common scenarios we see across every industry. Pick one and it's ready to use in days."
           />
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {useCases.map((u, i) => (
@@ -160,9 +160,9 @@ export default function SolutionsPage() {
       <section className="py-24">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading
-            eyebrow="Why these work"
-            title="Six proven templates behind every use case."
-            subtitle="The agent never improvises beyond its knowledge base, never carries deal-closing responsibility, and always has a defined human-escalation path. That's exactly where 2025–26 voice agents match or beat human consistency."
+            eyebrow="Why These Work"
+            title="Calling tasks where an AI assistant consistently outperforms a team."
+            subtitle="Speaksy works best for defined, repeatable conversations where consistency and speed matter more than improvisation. That's where it matches — and often beats — even great human callers."
           />
           <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {patterns.map((p, i) => (
@@ -182,8 +182,8 @@ export default function SolutionsPage() {
       <section className="border-t border-line py-24">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading
-            eyebrow="How it works"
-            title="From script to live calls in four steps."
+            eyebrow="How to Get Started"
+            title="From sign-up to live calls in four steps."
           />
           <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {steps.map(([n, title, body], i) => (

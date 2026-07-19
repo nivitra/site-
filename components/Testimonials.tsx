@@ -7,28 +7,28 @@ import SectionHeading from "./ui/SectionHeading";
 const testimonials = [
   {
     quote:
-      "We moved our entire payment reminder operation from a 40-person team to Speaksy in three weeks. Costs dropped 61%, and honestly — our customers respond better to the AI agent than they did to our team.",
+      "We replaced our 40-person payment reminder team with Speaksy in just three weeks. Costs dropped 61% — and remarkably, our customers respond better to Speaksy than they ever did to our human team.",
     name: "Head of Operations",
     org: "Financial Services · Mumbai",
     metric: "61% cost reduction",
   },
   {
     quote:
-      "Every platform we looked at was priced in dollars and built for American accents. Speaksy is built for India — it sounds natural in Hindi and books twice as many demos as our previous setup.",
+      "Every platform we evaluated was built for American accents and billed in dollars. Speaksy is designed for India — it sounds natural in Hindi and books more than twice the demos our previous setup ever managed.",
     name: "VP Growth",
     org: "EdTech · Bengaluru",
     metric: "2.7× more demos booked",
   },
   {
     quote:
-      "Undelivered orders were eating 12% of our revenue. Speaksy confirms every order within minutes in the customer's language. Failed deliveries dropped to 7% — the savings pay for Speaksy many times over.",
+      "Undelivered orders were costing us 12% of our revenue. Speaksy now confirms every order within minutes in the customer's own language. Failed deliveries fell sharply — the savings cover Speaksy many times over.",
     name: "Founder",
     org: "Retail · Delhi",
     metric: "38% fewer failed deliveries",
   },
   {
     quote:
-      "The moment a customer needs personal attention, my sales team gets the live call with complete context. No repeated questions, no wasted time. It's like having the perfect receptionist.",
+      "The second a customer is ready to talk seriously, my sales team gets the call with everything they need already on screen. No wasted questions, no lost time. It's like having the perfect receptionist who never sleeps.",
     name: "Sales Director",
     org: "Real Estate · Pune",
     metric: "Instant team handoff",
@@ -49,8 +49,8 @@ export default function Testimonials() {
     <section className="relative py-28 border-y border-line bg-surface">
       <div className="mx-auto max-w-4xl px-6">
         <SectionHeading
-          eyebrow="Customers"
-          title="Loved by businesses across India."
+          eyebrow="Customer Stories"
+          title="Businesses that made the switch. And never looked back."
         />
         <div className="relative mt-12 min-h-[300px] sm:min-h-[260px]">
           <AnimatePresence mode="wait">

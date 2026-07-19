@@ -4,17 +4,17 @@ import SectionHeading from "./ui/SectionHeading";
 type Cell = string | boolean;
 
 const rows: [string, Cell, Cell, Cell][] = [
-  ["Price per live minute", "from ₹3.99", "₹9–14 (USD billed)", "₹22–35 loaded"],
-  ["Billed only for live talk-time", true, false, false],
-  ["Hinglish & 10+ Indian languages", true, "partial", false],
-  ["Sub-800ms response latency", true, "varies", "—"],
-  ["Visual graph agent builder", true, "some", false],
-  ["Live human handoff with context", true, false, true],
-  ["Bring your own telephony / SIP", true, "limited", "—"],
-  ["Bring your own AI keys", true, false, "—"],
-  ["TRAI / DND compliance built-in", true, false, "manual"],
-  ["Indian data residency (DPDP)", true, false, true],
-  ["Scales to 10,000 parallel calls", true, true, false],
+  ["Price per minute of conversation", "from ₹4.75", "₹9–14 (billed in USD)", "₹22–35 per agent"],
+  ["Charged only for real conversations", true, false, false],
+  ["Speaks all Indian languages naturally", true, "partial", false],
+  ["Replies in less than a second", true, "varies", "—"],
+  ["Easy conversation builder (no coding)", true, "some", false],
+  ["Instant handoff to your human team", true, false, true],
+  ["Works with your existing phone setup", true, "limited", "—"],
+  ["Use your preferred AI provider", true, false, "—"],
+  ["Calling rules followed automatically", true, false, "manual"],
+  ["Data stored safely in India", true, false, true],
+  ["Handles thousands of calls at once", true, true, false],
   ["Setup fees", "None", "Often", "High"],
 ];
 
@@ -31,7 +31,7 @@ function CellView({ v, highlight = false }: { v: Cell; highlight?: boolean }) {
         <path d="M18 6L6 18M6 6l12 12" />
       </svg>
     );
-  return <span className={`text-xs sm:text-sm ${highlight ? "font-semibold text-brand-300" : "text-muted"}`}>{v}</span>;
+  return <span className={`text-xs sm:text-sm ${highlight ? "font-semibold text-brand-600" : "text-muted"}`}>{v}</span>;
 }
 
 export default function CompareTable() {
@@ -40,7 +40,7 @@ export default function CompareTable() {
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
           eyebrow="Compare"
-          title="Do the math before anyone else does it for you."
+          title="The numbers don't lie. See for yourself."
         />
         <Reveal delay={0.1}>
           <div className="card mt-12 overflow-hidden rounded-3xl">
@@ -50,7 +50,7 @@ export default function CompareTable() {
                   <tr className="border-b border-line">
                     <th className="px-6 py-5 text-sm font-semibold text-muted">Capability</th>
                     <th className="bg-brand-500/10 px-6 py-5 text-center">
-                      <span className="text-sm font-bold text-brand-300">Speaksy ⚡</span>
+                      <span className="text-sm font-bold text-brand-600">Speaksy</span>
                     </th>
                     <th className="px-6 py-5 text-center text-sm font-semibold text-muted">
                       Global voice AI

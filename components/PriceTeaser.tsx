@@ -18,8 +18,8 @@ export default function PriceTeaser() {
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
           eyebrow="Pricing"
-          title="Simple, transparent pricing."
-          subtitle="Pay only when your AI agent is talking. No hidden fees, no setup costs."
+          title="Powerful technology. Refreshingly fair price."
+          subtitle="Pay only when your assistant is in an active conversation. No hidden charges, no setup costs, no surprises."
         />
         <Reveal delay={0.1}>
           <div className="card mt-14 flex flex-col gap-7 rounded-3xl p-8 sm:p-10">
@@ -43,14 +43,14 @@ export default function PriceTeaser() {
             <div className="mt-2 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-6">
               <p className="text-sm text-muted">
                 A typical business saves{" "}
-                <span className="font-semibold text-brand-700">₹18–25 lakh per year</span> switching to Speaksy.
+                <span className="font-semibold text-brand-700">₹18–25 lakh per year</span> after switching to Speaksy.
               </p>
               <Magnetic strength={0.35} radius={70}>
                 <Link
                   href="/pricing"
                   className="text-sm font-semibold text-brand-600 transition-colors hover:text-brand-700"
                 >
-                  Calculate your savings →
+                  See how much you'd save →
                 </Link>
               </Magnetic>
             </div>

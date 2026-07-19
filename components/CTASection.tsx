@@ -77,6 +77,10 @@ export default function CTASection() {
             <div className="relative flex flex-col items-center gap-6">
               <VoiceWaveform bars={40} className="h-10 w-48 opacity-60" />
 
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+                Built In India, Beats The World
+              </p>
+
               <SplitReveal
                 as="h2"
                 mode="words"
@@ -84,11 +88,12 @@ export default function CTASection() {
                 staggerMs={40}
                 className="max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
               >
-                Ready to transform your customer calls?
+                Ready to stop losing customers to unanswered calls?
               </SplitReveal>
 
               <p className="max-w-xl text-white/85">
-                Get started with a free demo. See your AI agent in action within minutes.
+                Book a free demo. See Speaksy handle a real call for your business — in your language,
+                on your use case — within minutes.
               </p>
 
               <div className="flex flex-wrap justify-center gap-4">
@@ -97,7 +102,7 @@ export default function CTASection() {
                     href="/contact"
                     className="rounded-xl bg-white px-8 py-4 text-sm font-bold text-brand-700 shadow-xl transition-transform hover:scale-[1.04] active:scale-[0.98]"
                   >
-                    Book a Live Demo →
+                    Book a Demo →
                   </Link>
                 </Magnetic>
                 <Magnetic strength={0.3} radius={80}>
@@ -105,13 +110,13 @@ export default function CTASection() {
                     href="/pricing"
                     className="rounded-xl border border-white/30 px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-white/10"
                   >
-                    Calculate Your Savings
+                    See what you&apos;d save
                   </Link>
                 </Magnetic>
               </div>
 
               <p className="text-xs text-white/60">
-                100 free minutes on signup · No credit card · No setup fee
+                Start free — 100 minutes included · No credit card needed · No setup fee
               </p>
             </div>
           </div>
