@@ -11,13 +11,12 @@ export default function LanguageShowcase() {
   const lang = languages[active];
 
   return (
-    <section className="relative overflow-hidden border-y border-line bg-surface/40 py-24">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[300px] w-[700px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(34,197,94,0.08),transparent)]" />
+    <section className="relative overflow-hidden border-y border-line bg-surface py-28">
       <div className="relative mx-auto max-w-6xl px-6">
         <SectionHeading
-          eyebrow="🇮🇳 14 Languages, Native"
-          title="Your customer's mother tongue is our first language."
-          subtitle="Tap a language to see how Speaksy actually speaks it — native script, native courtesy, regional accents. 120 crore+ Indians reachable, no language ever an 'add-on'."
+          eyebrow="Languages"
+          title="Speak to every customer in their own language."
+          subtitle="Your AI agent converses naturally in 14 Indian languages — with the right accent, the right courtesy, and the right words."
         />
 
         {/* language chips */}
@@ -27,14 +26,14 @@ export default function LanguageShowcase() {
               key={l.slug}
               onClick={() => setActive(i)}
               className={`relative rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-                i === active ? "text-brand-950" : "text-muted hover:text-foreground"
+                i === active ? "text-white" : "text-muted hover:text-foreground"
               }`}
               dir={l.rtl ? "rtl" : "ltr"}
             >
               {i === active && (
                 <motion.span
                   layoutId="lang-pill"
-                  className="absolute inset-0 rounded-full bg-brand-400"
+                  className="absolute inset-0 rounded-full bg-brand-600"
                   transition={{ type: "spring", stiffness: 380, damping: 32 }}
                 />
               )}
@@ -56,41 +55,41 @@ export default function LanguageShowcase() {
             >
               <div className="flex flex-col gap-4">
                 <div className="flex items-baseline gap-3">
-                  <span className="font-indic text-4xl font-semibold text-brand-300" dir={lang.rtl ? "rtl" : "ltr"}>
+                  <span className="font-indic text-4xl font-semibold text-brand-600" dir={lang.rtl ? "rtl" : "ltr"}>
                     {lang.native}
                   </span>
                   <span className="text-sm text-muted">{lang.name}</span>
                 </div>
                 <p className="text-sm leading-relaxed text-muted">{lang.tagline}</p>
                 <div className="flex flex-wrap gap-4 text-sm">
-                  <span className="rounded-full bg-white/[0.05] px-3.5 py-1.5">
-                    <span className="font-mono font-semibold text-brand-400">{lang.speakers}</span>{" "}
+                  <span className="rounded-full bg-surface px-3.5 py-1.5">
+                    <span className="font-mono font-semibold text-brand-600">{lang.speakers}</span>{" "}
                     <span className="text-muted">speakers</span>
                   </span>
-                  <span className="rounded-full bg-white/[0.05] px-3.5 py-1.5 text-muted">
+                  <span className="rounded-full bg-surface px-3.5 py-1.5 text-muted">
                     {lang.scriptName}
                   </span>
                 </div>
                 <p className="text-xs text-muted">📍 {lang.regions.slice(0, 4).join(" · ")}</p>
                 <Link
                   href={`/languages/${lang.slug}`}
-                  className="mt-auto inline-flex w-fit items-center gap-2 rounded-xl border border-brand-500/40 bg-brand-500/10 px-5 py-2.5 text-sm font-semibold text-brand-300 transition-colors hover:bg-brand-500/20"
+                  className="mt-auto inline-flex w-fit items-center gap-2 rounded-xl border border-brand-600/20 bg-brand-600/5 px-5 py-2.5 text-sm font-semibold text-brand-700 transition-colors hover:bg-brand-600/10"
                 >
-                  {lang.name} voice agents in detail →
+                  Learn more about {lang.name} →
                 </Link>
               </div>
 
               <div className="font-indic flex flex-col gap-2.5" dir={lang.rtl ? "rtl" : "ltr"}>
-                <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.2em] text-brand-400" dir="ltr" style={{ fontFamily: "var(--font-sans)" }}>
-                  Live sample · EMI reminder
+                <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.2em] text-brand-600" dir="ltr" style={{ fontFamily: "var(--font-sans)" }}>
+                  Sample conversation
                 </p>
-                <div className={`max-w-[90%] rounded-2xl bg-brand-900/70 px-4 py-3 text-sm leading-relaxed text-[#d8f5e0] ${lang.rtl ? "self-start rounded-br-sm text-right" : "self-start rounded-bl-sm"}`}>
+                <div className={`max-w-[90%] rounded-2xl bg-brand-600/10 px-4 py-3 text-sm leading-relaxed text-foreground ${lang.rtl ? "self-start rounded-br-sm text-right" : "self-start rounded-bl-sm"}`}>
                   {lang.dialogue.agent}
                 </div>
-                <div className={`max-w-[90%] rounded-2xl bg-white/10 px-4 py-3 text-sm leading-relaxed ${lang.rtl ? "self-end rounded-bl-sm text-right" : "self-end rounded-br-sm"}`}>
+                <div className={`max-w-[90%] rounded-2xl bg-surface-2 px-4 py-3 text-sm leading-relaxed text-foreground ${lang.rtl ? "self-end rounded-bl-sm text-right" : "self-end rounded-br-sm"}`}>
                   {lang.dialogue.user}
                 </div>
-                <div className={`max-w-[90%] rounded-2xl bg-brand-900/70 px-4 py-3 text-sm leading-relaxed text-[#d8f5e0] ${lang.rtl ? "self-start rounded-br-sm text-right" : "self-start rounded-bl-sm"}`}>
+                <div className={`max-w-[90%] rounded-2xl bg-brand-600/10 px-4 py-3 text-sm leading-relaxed text-foreground ${lang.rtl ? "self-start rounded-br-sm text-right" : "self-start rounded-bl-sm"}`}>
                   {lang.dialogue.agent2}
                 </div>
               </div>
@@ -99,9 +98,9 @@ export default function LanguageShowcase() {
         </div>
 
         <p className="mt-8 text-center text-sm text-muted">
-          Every language: same latency, same intelligence, same ₹3.99/min.{" "}
-          <Link href="/languages" className="font-semibold text-brand-400 hover:text-brand-300">
-            See all 14 language pages →
+          Every language, same quality, same experience.{" "}
+          <Link href="/languages" className="font-semibold text-brand-600 hover:text-brand-700">
+            See all 14 languages →
           </Link>
         </p>
       </div>

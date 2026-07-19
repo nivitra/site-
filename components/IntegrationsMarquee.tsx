@@ -4,10 +4,9 @@ import { useEffect, useRef } from "react";
 import { animate } from "animejs";
 
 const integrations = [
-  "Twilio", "Exotel", "Plivo", "Airtel IQ", "Acefone", "Deepgram", "Sarvam AI",
-  "AssemblyAI", "ElevenLabs", "Cartesia", "Smallest.ai", "OpenAI", "Anthropic",
-  "Gemini", "Groq", "HubSpot", "Zoho CRM", "Salesforce", "LeadSquared",
-  "WhatsApp Business", "Zapier", "Make.com", "n8n", "Google Calendar",
+  "HubSpot", "Zoho CRM", "Salesforce", "LeadSquared", "WhatsApp Business",
+  "Google Calendar", "Zapier", "Make.com", "Freshdesk", "Razorpay",
+  "Shopify", "Google Sheets", "Slack", "Microsoft Teams", "Exotel", "Plivo",
 ];
 
 export default function IntegrationsMarquee() {
@@ -44,14 +43,14 @@ export default function IntegrationsMarquee() {
         ref={labelRef}
         className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.25em] text-muted"
       >
-        Plugs into the stack you already use
+        Works with the tools you already use
       </p>
       <div className="marquee-mask overflow-hidden">
         <div className="animate-marquee flex w-max gap-4">
           {row.map((name, i) => (
             <span
               key={`${name}-${i}`}
-              className="card whitespace-nowrap rounded-full px-6 py-3 text-sm font-medium text-muted transition-all duration-300 hover:-translate-y-1 hover:border-brand-400/40 hover:text-brand-300 hover:shadow-[0_12px_30px_-16px_rgba(34,197,94,0.5)]"
+              className="card whitespace-nowrap rounded-full px-6 py-3 text-sm font-medium text-muted transition-all duration-300 hover:-translate-y-1 hover:border-brand-600/30 hover:text-brand-600 hover:shadow-[0_8px_20px_-8px_rgba(22,163,74,0.15)]"
             >
               {name}
             </span>

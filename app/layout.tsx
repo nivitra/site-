@@ -26,29 +26,29 @@ const notoDevanagari = Noto_Sans_Devanagari({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#05080a",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
-  colorScheme: "dark",
+  colorScheme: "light",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://speaksy.in"),
   title: {
-    default: "Speaksy — Voice AI in 14 Indian Languages | Built in India, Beats the World",
+    default: "Speaksy — India's #1 AI Voice Agent for Business",
     template: "%s · Speaksy",
   },
   description:
-    "Speaksy is India's most affordable human-grade Voice AI platform. 14 Indian languages, sub-800ms latency, visual graph agents, live human handoff — from ₹3.99/min.",
+    "Speaksy automates your customer calls with AI voice agents that sound human, speak 14 Indian languages, and work 24/7. Qualify leads, book appointments, and delight customers — at a fraction of the cost.",
   keywords: [
-    "Voice AI India",
-    "Hindi voice bot",
-    "Marathi voice bot",
-    "Telugu voice bot",
-    "Hinglish voicebot",
-    "AI telecalling",
-    "outbound AI dialer",
-    "vernacular voice AI",
+    "AI voice agent India",
+    "automated calling",
+    "customer call automation",
+    "AI receptionist",
+    "business phone automation",
+    "lead qualification",
+    "appointment booking AI",
+    "multilingual voice agent",
     "Speaksy",
   ],
   authors: [{ name: "Speak Systems Pvt. Ltd." }],
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
   publisher: "Speak Systems Pvt. Ltd.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Speaksy — Voice AI that sounds human",
+    title: "Speaksy — Your AI Employee That Never Misses a Call",
     description:
-      "Built in India, beats the world. Human-grade voice agents in 14 Indian languages at 1/3rd the cost.",
+      "Automate customer calls with AI voice agents that sound human and speak 14 Indian languages. Trusted by businesses across India.",
     type: "website",
     locale: "en_IN",
     siteName: "Speaksy",
@@ -67,8 +67,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Speaksy — Voice AI in 14 Indian Languages",
-    description: "Human-grade voice agents from ₹3.99/min. Built in India, beats the world.",
+    title: "Speaksy — India's #1 AI Voice Agent for Business",
+    description: "AI voice agents that sound human, speak 14 languages, and work 24/7. Trusted by businesses across India.",
     images: ["/brand/logo-icon-256.png"],
   },
   robots: {
@@ -89,9 +89,9 @@ const orgJsonLd = {
   legalName: "Speak Systems Pvt. Ltd.",
   url: "https://speaksy.in",
   logo: "https://speaksy.in/brand/logo-icon-256.png",
-  slogan: "Built in India, Beats the World",
+  slogan: "Your AI employee that never misses a call",
   description:
-    "Human-grade Voice AI platform for Indian businesses — 14 Indian languages, sub-800ms latency, from ₹3.99 per live minute.",
+    "AI voice agents that automate customer calls for Indian businesses. 14 Indian languages, 24/7 availability, trusted by companies across India.",
   email: "hello@speaksy.in",
   foundingDate: "2024",
   areaServed: "IN",

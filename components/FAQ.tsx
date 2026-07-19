@@ -8,32 +8,32 @@ export type FaqItem = { q: string; a: string };
 
 const defaultFaqs: FaqItem[] = [
   {
-    q: "How is Speaksy so much cheaper than other voice AI platforms?",
-    a: "Three reasons: our speech stack is optimized for Indian telephony (8kHz codecs, regional models) which slashes compute cost; we bill per live-call second — never for ringing, dead air or failed connects; and we're built in India, priced in rupees, without Silicon Valley margins baked in.",
+    q: "How is Speaksy so affordable?",
+    a: "We built our technology specifically for Indian phone networks and languages, which makes it significantly more efficient than global platforms. You only pay for actual conversation time — never for ringing, hold time, or unanswered calls.",
   },
   {
-    q: "Will customers know they're talking to an AI?",
-    a: "In blind evaluations, over 80% of customers complete calls without realizing it's AI. Speaksy handles interruptions, code-switching (Hinglish, Tanglish), fillers and back-channels naturally. We also support explicit AI disclosure at call start wherever your compliance team requires it.",
+    q: "Will my customers know they're talking to AI?",
+    a: "In surveys, over 80% of customers complete their calls without realizing they spoke to AI. Speaksy handles pauses, interruptions, and natural conversation flow just like a person would. If your compliance requires disclosure, we can add that at the start of every call.",
   },
   {
-    q: "What happens when the AI can't handle a conversation?",
-    a: "Speaksy detects complex objections or high-intent moments in real time and bridges the live call to your human agent in under 1.5 seconds — with the full transcript and customer context on their screen. The customer never repeats themselves.",
+    q: "What happens when the AI can't handle something?",
+    a: "Speaksy detects when a customer needs personal attention and instantly transfers the call to your team — with the complete conversation history on screen. Your customer never has to repeat themselves.",
   },
   {
-    q: "Can I use my existing phone numbers and telephony provider?",
-    a: "Yes. Speaksy supports bring-your-own-telephony with Twilio, Exotel, Plivo, Airtel IQ or any generic SIP trunk. You can also buy numbers directly through us if you prefer a single bill.",
+    q: "Can I keep my existing phone numbers?",
+    a: "Absolutely. Speaksy works with your current phone setup. Keep your numbers, your provider, and your rates. We can also set up new numbers for you if you prefer.",
   },
   {
     q: "Which languages does Speaksy support?",
-    a: "14 languages: Hindi, Hinglish, Marathi, Telugu, Tamil, Gujarati, Kannada, Bengali, Malayalam, Punjabi, Odia, Urdu, Assamese and Indian English — with native accents and natural mid-sentence code-switching. Each has its own dedicated page under /languages.",
+    a: "14 Indian languages including Hindi, Marathi, Telugu, Tamil, Gujarati, Kannada, Bengali, Malayalam, Punjabi, Odia, Urdu, Assamese, and English — each with natural regional accents.",
   },
   {
-    q: "Is Speaksy compliant for BFSI use cases?",
-    a: "Yes. TRAI calling windows and DND scrubbing are enforced automatically on every campaign, PII like PAN and Aadhaar numbers is masked in real time from transcripts, data stays on Indian servers for DPDP compliance, and everything is encrypted at rest with AES-256.",
+    q: "Is my data safe and compliant?",
+    a: "Yes. All data is stored securely on Indian servers. We follow all calling regulations automatically — calling hours, privacy rules, and data protection laws are built into every call.",
   },
   {
-    q: "How fast can I go live?",
-    a: "With a pre-built industry template, same day. A custom graph agent with your CRM integration typically takes 3–5 days. No setup fees either way.",
+    q: "How quickly can I get started?",
+    a: "Most businesses go live within 48 hours. We set everything up for you — just tell us what your callers say today, and we'll have your AI agent ready to go.",
   },
 ];
 
@@ -41,28 +41,28 @@ export default function FAQ({ items = defaultFaqs, heading = true }: { items?: F
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="py-24">
+    <section className="py-28">
       <div className="mx-auto max-w-3xl px-6">
         {heading && (
           <SectionHeading
             eyebrow="FAQ"
-            title="Questions, answered straight."
+            title="Common questions, straight answers."
           />
         )}
         <div className="mt-12 flex flex-col gap-3">
           {items.map((f, i) => {
             const isOpen = open === i;
             return (
-              <div key={f.q} className={`card overflow-hidden rounded-2xl transition-colors ${isOpen ? "border-brand-500/30" : ""}`}>
+              <div key={f.q} className={`card overflow-hidden rounded-2xl transition-colors ${isOpen ? "border-brand-600/20" : ""}`}>
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                 >
-                  <span className="text-sm font-semibold sm:text-base">{f.q}</span>
+                  <span className="text-sm font-semibold text-foreground sm:text-base">{f.q}</span>
                   <motion.span
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.25 }}
-                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line text-brand-400"
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line text-brand-600"
                   >
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                       <path d="M12 5v14M5 12h14" />

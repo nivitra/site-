@@ -46,7 +46,7 @@ export default function SpotlightCard({
 
         if (spotlight && glow) {
           glow.style.opacity = "1";
-          glow.style.background = `radial-gradient(420px circle at ${x}px ${y}px, rgba(74,222,128,0.16), transparent 55%)`;
+          glow.style.background = `radial-gradient(420px circle at ${x}px ${y}px, rgba(34,197,94,0.08), transparent 55%)`;
         }
 
         if (tilt) {

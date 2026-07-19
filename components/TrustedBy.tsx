@@ -5,14 +5,14 @@ import { animate, stagger } from "animejs";
 import Reveal from "./ui/Reveal";
 
 const brands = [
-  { name: "LoanKart", sector: "NBFC" },
-  { name: "GlowKart", sector: "D2C Beauty" },
-  { name: "VidyaPrime", sector: "EdTech" },
+  { name: "LoanKart", sector: "Finance" },
+  { name: "GlowKart", sector: "Retail" },
+  { name: "VidyaPrime", sector: "Education" },
   { name: "MediBook", sector: "Healthcare" },
   { name: "SwiftShip", sector: "Logistics" },
   { name: "PolicyMitra", sector: "Insurance" },
   { name: "UrbanNest", sector: "Real Estate" },
-  { name: "FreshDaily", sector: "Quick Commerce" },
+  { name: "FreshDaily", sector: "Commerce" },
 ];
 
 export default function TrustedBy() {
@@ -57,7 +57,7 @@ export default function TrustedBy() {
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
           <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.25em] text-muted">
-            Powering conversations for teams across India
+            Trusted by growing businesses across India
           </p>
         </Reveal>
         <div ref={gridRef} className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
@@ -67,10 +67,10 @@ export default function TrustedBy() {
               data-brand
               className="group flex flex-col items-center gap-1"
             >
-              <span className="text-lg font-bold tracking-tight text-foreground/60 transition-colors duration-300 group-hover:text-brand-300">
+              <span className="text-lg font-bold tracking-tight text-foreground/40 transition-colors duration-300 group-hover:text-brand-600">
                 {b.name}
               </span>
-              <span className="text-[10px] uppercase tracking-wider text-muted/60">{b.sector}</span>
+              <span className="text-[10px] uppercase tracking-wider text-muted/50">{b.sector}</span>
             </div>
           ))}
         </div>

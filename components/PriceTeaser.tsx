@@ -7,31 +7,31 @@ import Reveal from "./ui/Reveal";
 import SectionHeading from "./ui/SectionHeading";
 
 const bars = [
-  { label: "Traditional call center", price: "₹22–35/min", pct: 100, color: "bg-white/15", text: "text-muted" },
-  { label: "Global voice AI platforms", price: "₹9–14/min", pct: 42, color: "bg-yellow-400/50", text: "text-yellow-200" },
-  { label: "Speaksy", price: "from ₹3.99/min", pct: 15, color: "brand-pill", text: "text-brand-300" },
+  { label: "Traditional call center", price: "₹22–35/min", pct: 100, color: "bg-gray-200", text: "text-muted" },
+  { label: "Global AI platforms", price: "₹9–14/min", pct: 42, color: "bg-gray-300", text: "text-muted" },
+  { label: "Speaksy", price: "from ₹3.99/min", pct: 15, color: "bg-brand-500", text: "text-brand-700" },
 ];
 
 export default function PriceTeaser() {
   return (
-    <section className="py-24">
+    <section className="py-28 border-y border-line bg-surface">
       <div className="mx-auto max-w-5xl px-6">
         <SectionHeading
           eyebrow="Pricing"
-          title="Same intelligence. A fraction of the bill."
-          subtitle="Billed per live-call second. Never for ringing, dead air or failed connects."
+          title="Simple, transparent pricing."
+          subtitle="Pay only when your AI agent is talking. No hidden fees, no setup costs."
         />
         <Reveal delay={0.1}>
-          <div className="card mt-12 flex flex-col gap-7 rounded-3xl p-8 sm:p-10">
+          <div className="card mt-14 flex flex-col gap-7 rounded-3xl p-8 sm:p-10">
             {bars.map((b, i) => (
               <div key={b.label} className="flex flex-col gap-2">
                 <div className="flex items-baseline justify-between">
                   <span className={`text-sm font-semibold ${b.label === "Speaksy" ? "text-foreground" : "text-muted"}`}>
-                    {b.label === "Speaksy" ? "Speaksy ⚡" : b.label}
+                    {b.label}
                   </span>
                   <span className={`font-mono text-sm font-semibold ${b.text}`}>{b.price}</span>
                 </div>
-                <div className="h-4 overflow-hidden rounded-full bg-white/5">
+                <div className="h-4 overflow-hidden rounded-full bg-surface-2">
                   <MorphBar
                     pct={b.pct}
                     delay={120 + i * 140}
@@ -42,15 +42,15 @@ export default function PriceTeaser() {
             ))}
             <div className="mt-2 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-6">
               <p className="text-sm text-muted">
-                A 50,000-call/month operation typically saves{" "}
-                <span className="font-semibold text-brand-300">₹18–25 lakh per year</span> switching to Speaksy.
+                A typical business saves{" "}
+                <span className="font-semibold text-brand-700">₹18–25 lakh per year</span> switching to Speaksy.
               </p>
               <Magnetic strength={0.35} radius={70}>
                 <Link
                   href="/pricing"
-                  className="text-sm font-semibold text-brand-400 transition-colors hover:text-brand-300"
+                  className="text-sm font-semibold text-brand-600 transition-colors hover:text-brand-700"
                 >
-                  Run your own numbers →
+                  Calculate your savings →
                 </Link>
               </Magnetic>
             </div>

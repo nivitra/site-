@@ -4,16 +4,13 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { animate, stagger } from "animejs";
 import CallDemo from "./CallDemo";
-import AmbientField from "./ui/AmbientField";
-import LanguageOrbit from "./ui/LanguageOrbit";
 import Magnetic from "./ui/Magnetic";
 import SplitReveal from "./ui/SplitReveal";
-import SoundRings from "./ui/SoundRings";
 
 const ticks = [
-  "Sub-800ms voice latency",
-  "14 Indian languages, native accents",
-  "Starts at ₹3.99/min — no setup fee",
+  "Works in 14 Indian languages",
+  "Sounds indistinguishable from human",
+  "Live in under 48 hours",
 ];
 
 export default function Hero() {
@@ -66,21 +63,21 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="grid-bg relative overflow-hidden pb-20 pt-36 sm:pt-44">
-      <AmbientField />
-      <LanguageOrbit />
+    <section className="relative overflow-hidden pb-20 pt-36 sm:pt-44">
+      {/* Subtle green gradient accent */}
+      <div className="pointer-events-none absolute -top-40 left-1/2 h-[600px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(34,197,94,0.06),transparent)]" />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.15fr_1fr]">
         <div ref={metaRef} className="flex flex-col items-start gap-6">
           <span
             data-hero
-            className="inline-flex items-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-brand-300"
+            className="inline-flex items-center gap-2 rounded-full border border-brand-600/20 bg-brand-600/5 px-4 py-1.5 text-xs font-semibold tracking-wide text-brand-700"
           >
             <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-60" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-400" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-500 opacity-60" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-500" />
             </span>
-            🇮🇳 Built in India, Beats the World
+            India&apos;s #1 AI Voice Agent
           </span>
 
           <SplitReveal
@@ -88,27 +85,23 @@ export default function Hero() {
             mode="words"
             delay={120}
             staggerMs={48}
-            className="text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.6rem]"
+            className="text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-[3.6rem]"
           >
-            Voice AI that sounds <span className="text-gradient">human</span>.
-            Priced like it&apos;s made for India.
+            Your AI employee that <span className="text-gradient">never misses a call</span>.
           </SplitReveal>
 
           <p
             data-hero
             className="max-w-xl text-base leading-relaxed text-muted sm:text-lg"
           >
-            Speaksy makes and takes thousands of calls a day in Hindi, Marathi, Telugu
-            and 14 languages — qualifying leads, collecting payments and booking
-            appointments with human-grade conversations, at a fraction of what
-            anyone else charges.
+            Speaksy answers, qualifies, and books appointments for your business — in your customer&apos;s language, 24 hours a day, 7 days a week.
           </p>
 
           <div data-hero className="flex flex-wrap items-center gap-4">
             <Magnetic strength={0.42} radius={90}>
               <Link
                 href="/contact"
-                className="brand-pill relative inline-flex overflow-hidden rounded-xl px-7 py-3.5 text-sm font-semibold text-white shadow-[0_8px_32px_-8px_rgba(34,197,94,0.8)] transition-transform hover:scale-[1.03] active:scale-[0.98]"
+                className="brand-pill relative inline-flex overflow-hidden rounded-xl px-7 py-3.5 text-sm font-semibold shadow-[0_8px_24px_-6px_rgba(22,163,74,0.4)] transition-transform hover:scale-[1.03] active:scale-[0.98]"
               >
                 <span className="relative z-10">Book a Live Demo →</span>
               </Link>
@@ -116,7 +109,7 @@ export default function Hero() {
             <Magnetic strength={0.28} radius={70}>
               <Link
                 href="/pricing"
-                className="rounded-xl border border-line px-7 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-brand-500/40 hover:bg-brand-500/5"
+                className="rounded-xl border border-line px-7 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-brand-600/20 hover:bg-brand-600/5"
               >
                 See Pricing
               </Link>
@@ -126,7 +119,7 @@ export default function Hero() {
           <ul ref={ticksRef} className="mt-2 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-x-6">
             {ticks.map((t) => (
               <li key={t} data-tick className="flex items-center gap-2 text-sm text-muted">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="3" strokeLinecap="round">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="3" strokeLinecap="round">
                   <path d="M20 6L9 17l-5-5" />
                 </svg>
                 {t}
@@ -136,7 +129,6 @@ export default function Hero() {
         </div>
 
         <div ref={demoRef} className="relative flex justify-center lg:justify-end">
-          <SoundRings className="scale-110 opacity-70" rings={3} />
           <div className="relative z-10">
             <CallDemo />
           </div>

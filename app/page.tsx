@@ -30,9 +30,9 @@ const FAQ = dynamic(() => import("@/components/FAQ"));
 function SectionSkeleton() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-24" aria-hidden>
-      <div className="mx-auto h-4 w-32 animate-pulse rounded bg-white/5" />
-      <div className="mx-auto mt-4 h-10 w-72 max-w-full animate-pulse rounded bg-white/5" />
-      <div className="mt-12 h-48 animate-pulse rounded-3xl bg-white/[0.03]" />
+      <div className="mx-auto h-4 w-32 animate-pulse rounded bg-gray-100" />
+      <div className="mx-auto mt-4 h-10 w-72 max-w-full animate-pulse rounded bg-gray-100" />
+      <div className="mt-12 h-48 animate-pulse rounded-3xl bg-gray-50" />
     </div>
   );
 }
@@ -43,15 +43,15 @@ export default function Home() {
       <Hero />
       <TrustedBy />
       <StatsBand />
-      <LanguageShowcase />
       <FeatureGrid />
-      <Benchmarks />
       <GraphShowcase />
-      <HandoffShowcase />
-      <Personas />
+      <LanguageShowcase />
       <IndustriesTabs />
+      <HandoffShowcase />
+      <Benchmarks />
       <PriceTeaser />
       <IntegrationsMarquee />
+      <Personas />
       <Testimonials />
       <FAQ />
       <CTASection />

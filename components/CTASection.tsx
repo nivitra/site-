@@ -26,7 +26,7 @@ export default function CTASection() {
       animate(el, {
         translateY: () => [utils.random(10, 30), utils.random(-40, -10)],
         translateX: () => utils.random(-20, 20),
-        opacity: [0, 0.8, 0],
+        opacity: [0, 0.6, 0],
         scale: [0.4, 1.2],
         duration: () => utils.random(2800, 5200),
         delay: () => utils.random(0, 2500) + i * 30,
@@ -48,11 +48,10 @@ export default function CTASection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden py-24">
+    <section className="relative overflow-hidden py-28">
       <div className="mx-auto max-w-5xl px-6">
         <Reveal>
-          <div className="brand-pill relative overflow-hidden rounded-[2rem] px-8 py-16 text-center sm:px-16">
-            <div className="grid-bg pointer-events-none absolute inset-0 opacity-40" />
+          <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-600 via-brand-500 to-brand-600 px-8 py-20 text-center sm:px-16">
             <div className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[600px] -translate-x-1/2 rounded-full bg-white/10 blur-3xl" />
 
             <div
@@ -64,7 +63,7 @@ export default function CTASection() {
                 <span
                   key={i}
                   data-dot
-                  className="absolute h-1.5 w-1.5 rounded-full bg-white/70"
+                  className="absolute h-1.5 w-1.5 rounded-full bg-white/50"
                   style={{
                     left: `${5 + ((i * 19) % 90)}%`,
                     top: `${20 + ((i * 29) % 60)}%`,
@@ -76,11 +75,7 @@ export default function CTASection() {
             </div>
 
             <div className="relative flex flex-col items-center gap-6">
-              <span className="rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-white">
-                🇮🇳 Built in India, Beats the World
-              </span>
-
-              <VoiceWaveform bars={40} className="h-10 w-48 opacity-90" />
+              <VoiceWaveform bars={40} className="h-10 w-48 opacity-60" />
 
               <SplitReveal
                 as="h2"
@@ -89,19 +84,18 @@ export default function CTASection() {
                 staggerMs={40}
                 className="max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
               >
-                Hear Speaksy call your own number. Right now.
+                Ready to transform your customer calls?
               </SplitReveal>
 
-              <p className="max-w-xl text-white/80">
-                Book a 20-minute demo and we&apos;ll run a live agent on your actual use
-                case — your script, your language, your leads. No slides, just a call.
+              <p className="max-w-xl text-white/85">
+                Get started with a free demo. See your AI agent in action within minutes.
               </p>
 
               <div className="flex flex-wrap justify-center gap-4">
                 <Magnetic strength={0.45} radius={100}>
                   <Link
                     href="/contact"
-                    className="rounded-xl bg-white px-8 py-4 text-sm font-bold text-brand-900 shadow-xl transition-transform hover:scale-[1.04] active:scale-[0.98]"
+                    className="rounded-xl bg-white px-8 py-4 text-sm font-bold text-brand-700 shadow-xl transition-transform hover:scale-[1.04] active:scale-[0.98]"
                   >
                     Book a Live Demo →
                   </Link>

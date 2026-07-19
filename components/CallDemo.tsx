@@ -160,7 +160,7 @@ export default function CallDemo() {
   }, [phase]);
 
   return (
-    <div className="card relative w-full max-w-md overflow-hidden rounded-3xl p-5 shadow-[0_30px_90px_-30px_rgba(0,0,0,0.9)] ring-1 ring-brand-400/10">
+    <div className="card relative w-full max-w-md overflow-hidden rounded-3xl p-5 shadow-[0_12px_40px_-12px_rgba(22,163,74,0.08)]">
       {/* header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
@@ -170,16 +170,16 @@ export default function CallDemo() {
             alt=""
             width={40}
             height={40}
-            className="h-10 w-10 rounded-full shadow-[0_4px_16px_-4px_rgba(34,197,94,0.6)]"
+            className="h-10 w-10 rounded-full"
           />
           <div>
-            <p className="text-sm font-semibold">Speaksy Agent · Priya</p>
+            <p className="text-sm font-semibold text-foreground">Speaksy Agent · Priya</p>
             <p className="text-xs text-muted">{script.scenario}</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
           {(phase === "playing" || phase === "dialing") && (
-            <span className="relative flex h-2 w-2 rounded-full bg-brand-400 live-dot" />
+            <span className="relative flex h-2 w-2 rounded-full bg-brand-500 live-dot" />
           )}
           <span className="font-mono text-xs text-muted">
             {phase === "dialing" ? "Dialing…" : phase === "idle" ? "Ready" : fmt(elapsed)}
@@ -195,8 +195,8 @@ export default function CallDemo() {
             onClick={() => switchScript(i)}
             className={`font-indic rounded-full px-3 py-1.5 text-xs font-semibold transition-all ${
               i === scriptIdx
-                ? "bg-brand-500 text-brand-950"
-                : "border border-line text-muted hover:border-brand-500/40 hover:text-foreground"
+                ? "bg-brand-600 text-white"
+                : "border border-line text-muted hover:border-brand-600/40 hover:text-foreground"
             }`}
           >
             {s.label}
@@ -208,7 +208,7 @@ export default function CallDemo() {
       <div className="mt-4 flex h-64 flex-col gap-3 overflow-hidden">
         {phase === "idle" && (
           <div className="flex flex-1 flex-col items-center justify-center gap-3 text-center">
-            <VoiceWaveform bars={28} className="h-7 w-40 opacity-60" />
+            <VoiceWaveform bars={28} className="h-7 w-40 opacity-50" />
             <p className="max-w-[220px] text-sm text-muted">
               Press play to preview a real Speaksy conversation flow.
             </p>
@@ -218,7 +218,7 @@ export default function CallDemo() {
           <div className="flex flex-1 flex-col items-center justify-center gap-4">
             <div
               ref={dialRef}
-              className="brand-pill flex h-16 w-16 items-center justify-center rounded-full shadow-[0_0_40px_-4px_rgba(34,197,94,0.7)]"
+              className="brand-pill flex h-16 w-16 items-center justify-center rounded-full shadow-[0_4px_16px_rgba(22,163,74,0.3)]"
               style={{ willChange: "transform" }}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
@@ -231,33 +231,35 @@ export default function CallDemo() {
         )}
         {(phase === "playing" || phase === "done") && (
           <div className="flex flex-1 flex-col justify-end gap-2.5 overflow-hidden">
-            <AnimatePresence initial={false}>
-              {script.turns.slice(0, phase === "done" ? script.turns.length : turnIdx + 1).map((turn, i) => (
-                <motion.div
-                  key={`${scriptIdx}-${i}`}
-                  initial={{ opacity: 0, y: 16, scale: 0.97 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.35, ease: "easeOut" }}
-                  className={`font-indic max-w-[85%] rounded-2xl px-3.5 py-2.5 text-[13px] leading-snug ${
-                    turn.speaker === "agent"
-                      ? "self-start rounded-bl-sm bg-brand-900/70 text-[#d8f5e0]"
-                      : "self-end rounded-br-sm bg-white/10 text-foreground"
-                  }`}
-                >
-                  {turn.text}
-                </motion.div>
-              ))}
-            </AnimatePresence>
+            <div className="flex flex-col gap-2.5 overflow-y-auto pr-1">
+              <AnimatePresence initial={false}>
+                {script.turns.slice(0, phase === "done" ? script.turns.length : turnIdx + 1).map((turn, i) => (
+                  <motion.div
+                    key={`${scriptIdx}-${i}`}
+                    initial={{ opacity: 0, y: 16, scale: 0.97 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.35, ease: "easeOut" }}
+                    className={`font-indic max-w-[85%] rounded-2xl px-3.5 py-2.5 text-[13px] leading-snug ${
+                      turn.speaker === "agent"
+                        ? "self-start rounded-bl-sm bg-brand-600/10 text-foreground border border-brand-600/10"
+                        : "self-end rounded-br-sm bg-surface-2 text-foreground"
+                    }`}
+                  >
+                    {turn.text}
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
             {phase === "done" && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="mt-1 flex items-center gap-2 self-center rounded-full border border-brand-500/40 bg-brand-500/15 px-4 py-1.5"
+                className="mt-1 flex items-center gap-2 self-center rounded-full border border-brand-600/20 bg-brand-600/5 px-4 py-1.5"
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="3" strokeLinecap="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="3" strokeLinecap="round">
                   <path d="M20 6L9 17l-5-5" />
                 </svg>
-                <span className="text-xs font-semibold text-brand-300">
+                <span className="text-xs font-semibold text-brand-700">
                   Outcome: {script.disposition}
                 </span>
               </motion.div>
@@ -271,7 +273,7 @@ export default function CallDemo() {
         <div className="flex items-center gap-3">
           <button
             onClick={phase === "idle" || phase === "done" ? play : reset}
-            className="brand-pill flex h-11 w-11 items-center justify-center rounded-full text-white shadow-[0_4px_20px_-4px_rgba(34,197,94,0.7)] transition-transform hover:scale-105 active:scale-95"
+            className="brand-pill flex h-11 w-11 items-center justify-center rounded-full text-white shadow-[0_4px_16px_rgba(22,163,74,0.3)] transition-transform hover:scale-105 active:scale-95"
             aria-label={phase === "idle" || phase === "done" ? "Play demo call" : "Stop demo call"}
           >
             {phase === "idle" || phase === "done" ? (

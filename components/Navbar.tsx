@@ -8,8 +8,7 @@ import Logo from "./Logo";
 import Magnetic from "./ui/Magnetic";
 
 const links = [
-  { href: "/platform", label: "Platform" },
-  { href: "/languages", label: "Languages" },
+  { href: "/platform", label: "Product" },
   { href: "/solutions", label: "Solutions" },
   { href: "/customers", label: "Customers" },
   { href: "/pricing", label: "Pricing" },
@@ -49,7 +48,7 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
         className={`flex w-full max-w-6xl items-center justify-between rounded-2xl px-4 py-3 transition-all duration-300 sm:px-6 ${
-          scrolled ? "glass shadow-[0_8px_40px_-12px_rgba(0,0,0,0.8)]" : "border border-transparent"
+          scrolled ? "glass shadow-[0_4px_30px_-8px_rgba(0,0,0,0.08)]" : "border border-transparent bg-white/60"
         }`}
       >
         <Logo size={36} priority />
@@ -61,8 +60,8 @@ export default function Navbar() {
               href={l.href}
               className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
                 isActive(pathname, l.href)
-                  ? "bg-brand-500/15 text-brand-300"
-                  : "text-muted hover:bg-white/5 hover:text-foreground"
+                  ? "text-brand-600"
+                  : "text-muted hover:bg-black/[0.03] hover:text-foreground"
               }`}
             >
               {l.label}
@@ -74,7 +73,7 @@ export default function Navbar() {
           <Magnetic strength={0.4} radius={70}>
             <Link
               href="/contact"
-              className="brand-pill rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_24px_-6px_rgba(34,197,94,0.7)] transition-transform hover:scale-[1.03] active:scale-[0.98]"
+              className="brand-pill rounded-xl px-5 py-2.5 text-sm font-semibold shadow-[0_4px_16px_-4px_rgba(22,163,74,0.35)] transition-transform hover:scale-[1.03] active:scale-[0.98]"
             >
               Book a Demo
             </Link>
@@ -109,8 +108,8 @@ export default function Navbar() {
                 onClick={close}
                 className={`rounded-xl px-4 py-3 text-sm font-medium ${
                   isActive(pathname, l.href)
-                    ? "bg-brand-500/15 text-brand-300"
-                    : "text-foreground hover:bg-white/5"
+                    ? "text-brand-600"
+                    : "text-foreground hover:bg-black/[0.03]"
                 }`}
               >
                 {l.label}
@@ -119,7 +118,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={close}
-              className="brand-pill mt-2 rounded-xl px-4 py-3 text-center text-sm font-semibold text-white"
+              className="brand-pill mt-2 rounded-xl px-4 py-3 text-center text-sm font-semibold"
             >
               Book a Demo
             </Link>

@@ -24,11 +24,11 @@ export default function Logo({
         width={size}
         height={size}
         priority={priority}
-        className="rounded-xl shadow-[0_4px_20px_-4px_rgba(34,197,94,0.55)]"
+        className="rounded-xl"
       />
       {withWordmark && (
-        <span className="text-lg font-semibold tracking-tight">
-          Speaksy<span className="text-brand-400">.</span>
+        <span className="text-lg font-semibold tracking-tight text-foreground">
+          Speaksy<span className="text-brand-600">.</span>
         </span>
       )}
     </span>

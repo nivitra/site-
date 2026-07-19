@@ -7,69 +7,54 @@ import Stagger from "./ui/Stagger";
 const features = [
   {
     icon: "🗣️",
-    title: "Vernacular that fools telecallers",
-    body: "Hindi, Hinglish, Tamil, Telugu, Marathi, Bengali & more — with mid-sentence code-switching, natural fillers and regional accents trained on real Indian call audio.",
+    title: "Multilingual Conversations",
+    body: "Your AI agent speaks to every customer in their own language — Hindi, Tamil, Telugu, Marathi, and 10 more — naturally and fluently.",
   },
   {
-    icon: "⚡",
-    title: "Sub-800ms conversations",
-    body: "Streaming ASR under 200ms, LLM inference under 300ms and TTS first-byte under 150ms. Interruptions are handled instantly — talk over the agent and it stops, listens, adapts.",
-  },
-  {
-    icon: "🕸️",
-    title: "Visual Graph Agent builder",
-    body: "Stop writing 2,000-word prompts. Drag Static, Router and Action nodes into a deterministic dialogue graph with versioning, live validation and one-click publish.",
+    icon: "⏰",
+    title: "Always Available",
+    body: "Works 24 hours a day, 7 days a week. No holidays, no sick days, no missed calls. Every customer gets answered instantly.",
   },
   {
     icon: "🤝",
-    title: "Live human handoff in <1.5s",
-    body: "When a customer pushes a complex objection, Speaksy bridges the live call to your human agent with a full screen-pop transcript — the customer never repeats themselves.",
-  },
-  {
-    icon: "📞",
-    title: "Bring your own telephony",
-    body: "Twilio, Exotel, Plivo, Airtel — or any generic SIP trunk. Keep your numbers, your rates and your carrier relationships. No lock-in, ever.",
+    title: "Smart Handoff to Your Team",
+    body: "When a customer needs personal attention, Speaksy connects them to your team instantly — with full context, so nothing gets repeated.",
   },
   {
     icon: "📊",
-    title: "Outcome analytics, not vanity dials",
-    body: "Propensity dialing lifts connect rates toward 90%. Every call gets auto-QA'd, intent-classified and cost-attributed. You pay for outcomes, not dead air.",
+    title: "Real-Time Business Insights",
+    body: "See exactly how every call went — who converted, who needs follow-up, and where your biggest opportunities are.",
   },
   {
     icon: "🛡️",
-    title: "Compliance built for Bharat",
-    body: "TRAI calling windows, DND scrubbing, real-time PII masking of PAN/Aadhaar, DPDP-ready data residency on Indian servers, AES-256 encryption at rest.",
+    title: "Fully Compliant",
+    body: "Every regulation handled automatically. Calling hours, privacy rules, data protection — so you never have to worry about compliance.",
   },
   {
-    icon: "🔌",
-    title: "Your keys, your models",
-    body: "Bring your own OpenAI, Anthropic, Deepgram or ElevenLabs keys — or use Speaksy's bundled stack. Automatic provider fallbacks so a 503 never drops a call.",
-  },
-  {
-    icon: "💸",
-    title: "Pricing that makes CFOs smile",
-    body: "Billed per live-call second — never for ringing, dead air or failed connects. From ₹3.99/min, roughly a third of what global platforms charge in India.",
+    icon: "💰",
+    title: "Pay Per Minute",
+    body: "Only pay for actual conversations. No monthly minimums, no setup fees, no charges for unanswered calls.",
   },
 ];
 
 export default function FeatureGrid() {
   return (
-    <section className="relative py-24">
+    <section className="relative py-28">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Why Speaksy"
-          title="Everything the expensive platforms do. Nothing they overcharge for."
-          subtitle="One platform for outbound campaigns, inbound support and everything between — engineered in India for Indian call economics."
+          title="Everything your team does. At a fraction of the cost."
+          subtitle="One platform to qualify leads, book appointments, follow up on payments, and support customers — automatically."
         />
-        <Stagger className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <Stagger className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
             <div key={f.title} data-stagger>
               <SpotlightCard className="card card-hover h-full rounded-2xl" maxTilt={6}>
-                <div className="flex h-full flex-col gap-3 p-6">
+                <div className="flex h-full flex-col gap-3 p-7">
                   <span className="text-2xl transition-transform duration-300 group-hover:scale-110">
                     {f.icon}
                   </span>
-                  <h3 className="text-lg font-semibold tracking-tight">{f.title}</h3>
+                  <h3 className="text-lg font-semibold tracking-tight text-foreground">{f.title}</h3>
                   <p className="text-sm leading-relaxed text-muted">{f.body}</p>
                 </div>
               </SpotlightCard>
