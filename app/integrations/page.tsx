@@ -47,7 +47,7 @@ const groups = [
     title: "Voice synthesis (TTS)",
     desc: "Human-grade Indic voices by default; premium vendors a config flag away.",
     items: [
-      ["Speaksy Voices", "14 languages, native prosody"],
+      ["Speaksy Voices", "10 languages, native prosody"],
       ["ElevenLabs", "Premium neural voices"],
       ["Cartesia", "Sub-150ms streaming"],
       ["Smallest.ai", "Indian voice specialist"],

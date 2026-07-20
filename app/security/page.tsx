@@ -51,10 +51,22 @@ const pillars = [
 ];
 
 const faqs = [
-  ["Do you train models on our call data?", "Not without explicit opt-in. Customer call data is used to serve your calls. Workspaces that opt into model improvement contribute only PII-scrubbed, aggregated audio."],
-  ["Can our LLM/STT providers see customer PII?", "Transcripts are PII-masked in-stream before leaving the pipeline boundary, so downstream providers receive redacted text. With BYO-keys you also control exactly which providers are in the path."],
-  ["Where exactly is data stored?", "Mumbai and Hyderabad regions by default. Enterprise customers can pin storage to a specific region or their own VPC."],
-  ["How do we report a vulnerability?", "security@speaksy.in — we acknowledge within 24 hours, and we don't play games with researchers acting in good faith."],
+  {
+    q: "Do you train models on our call data?",
+    a: "Not without explicit opt-in. Customer call data is used to serve your calls. Workspaces that opt into model improvement contribute only PII-scrubbed, aggregated audio.",
+  },
+  {
+    q: "Can our LLM/STT providers see customer PII?",
+    a: "Transcripts are PII-masked in-stream before leaving the pipeline boundary, so downstream providers receive redacted text. With BYO-keys you also control exactly which providers are in the path.",
+  },
+  {
+    q: "Where exactly is data stored?",
+    a: "Mumbai and Hyderabad regions by default. Enterprise customers can pin storage to a specific region or their own VPC.",
+  },
+  {
+    q: "How do we report a vulnerability?",
+    a: "security@speaksy.in — we acknowledge within 24 hours, and we don't play games with researchers acting in good faith.",
+  },
 ];
 
 export default function SecurityPage() {
@@ -92,13 +104,16 @@ export default function SecurityPage() {
 
       <section className="py-24">
         <div className="mx-auto max-w-3xl px-6">
-          <SectionHeading eyebrow="Straight answers" title="What infosec teams ask us first." />
+          <SectionHeading
+            eyebrow="Straight answers"
+            title="What infosec teams ask us first."
+          />
           <div className="mt-10 flex flex-col gap-4">
-            {faqs.map(([q, a], i) => (
-              <Reveal key={q} delay={i * 0.06}>
+            {faqs.map((f, i) => (
+              <Reveal key={f.q} delay={i * 0.06}>
                 <div className="card rounded-2xl p-6">
-                  <h3 className="font-semibold">{q}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{a}</p>
+                  <h3 className="font-semibold">{f.q}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{f.a}</p>
                 </div>
               </Reveal>
             ))}
@@ -106,7 +121,10 @@ export default function SecurityPage() {
           <Reveal delay={0.3}>
             <p className="mt-10 text-center text-sm text-muted">
               Security questionnaire or VAPT scope to discuss?{" "}
-              <a href="mailto:security@speaksy.in" className="font-semibold text-brand-400 hover:text-brand-300">
+              <a
+                href="mailto:security@speaksy.in"
+                className="font-semibold text-brand-400 hover:text-brand-300"
+              >
                 security@speaksy.in
               </a>
             </p>

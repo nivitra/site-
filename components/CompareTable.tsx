@@ -4,7 +4,7 @@ import SectionHeading from "./ui/SectionHeading";
 type Cell = string | boolean;
 
 const rows: [string, Cell, Cell, Cell][] = [
-  ["Price per live minute", "from ₹3.99", "₹9–14 (USD billed)", "₹22–35 loaded"],
+  ["Price per live minute", "from ₹5.2", "₹8–11 typical", "₹22–35 loaded"],
   ["Billed only for live talk-time", true, false, false],
   ["Hinglish & 10+ Indian languages", true, "partial", false],
   ["Sub-800ms response latency", true, "varies", "—"],
@@ -50,7 +50,7 @@ export default function CompareTable() {
                   <tr className="border-b border-line">
                     <th className="px-6 py-5 text-sm font-semibold text-muted">Capability</th>
                     <th className="bg-brand-500/10 px-6 py-5 text-center">
-                      <span className="text-sm font-bold text-brand-300">Speaksy ⚡</span>
+                      <span className="text-sm font-bold text-brand-600">Speaksy</span>
                     </th>
                     <th className="px-6 py-5 text-center text-sm font-semibold text-muted">
                       Global voice AI

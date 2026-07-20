@@ -1,122 +1,78 @@
-import Link from "next/link";
+"use client";
+
+import SpeaksyPricingCards from "@/components/pro-pricing-slider/SpeaksyPricingCards";
+import { BUSINESS_VOLUME_STEPS, formatRate } from "@/components/pro-pricing-slider/speaksy-data";
 import Reveal from "./ui/Reveal";
+import SectionHeading from "./ui/SectionHeading";
 
-const tiers = [
-  {
-    name: "Starter",
-    price: "₹0",
-    unit: "to begin",
-    tag: "Try it free",
-    highlight: false,
-    cta: "Start Free",
-    blurb: "For testing your first agent on real calls.",
-    features: [
-      "100 free live minutes",
-      "1 voice agent, all languages",
-      "Visual graph builder",
-      "Bundled STT · LLM · TTS stack",
-      "Call logs, recordings & transcripts",
-      "Email support",
-    ],
-  },
-  {
-    name: "Growth",
-    price: "₹3.99",
-    unit: "per live minute",
-    tag: "Most popular",
-    highlight: true,
-    cta: "Book a Demo",
-    blurb: "For teams running real campaigns at scale.",
-    features: [
-      "Everything in Starter",
-      "Unlimited agents & campaigns",
-      "Batch dialing with propensity queue",
-      "Live human handoff (<1.5s)",
-      "Bring your own telephony & keys",
-      "WhatsApp / SMS / email triggers",
-      "CRM integrations & webhooks",
-      "Priority support on WhatsApp",
-    ],
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    unit: "volume pricing",
-    tag: "Best rates",
-    highlight: false,
-    cta: "Talk to Sales",
-    blurb: "For BFSI-scale volumes and strict compliance.",
-    features: [
-      "Everything in Growth",
-      "Volume discounts below ₹3/min",
-      "Sub-accounts & reseller markups",
-      "Private VPC / on-prem deployment",
-      "Custom voice cloning",
-      "99.99% uptime SLA",
-      "Dedicated success manager",
-      "SOC 2 / ISO reports under NDA",
-    ],
-  },
-];
-
+/**
+ * Pricing tiers + volume ladder table for /pricing.
+ */
 export default function PricingTiers() {
   return (
-    <section className="py-24">
+    <section className="pb-8 pt-2 sm:pb-12">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-6 lg:grid-cols-3">
-          {tiers.map((t, i) => (
-            <Reveal key={t.name} delay={i * 0.12} className="h-full">
-              <div
-                className={`relative flex h-full flex-col gap-6 rounded-3xl p-8 ${
-                  t.highlight
-                    ? "border border-brand-500/60 bg-gradient-to-b from-brand-900/40 to-surface shadow-[0_24px_80px_-24px_rgba(34,197,94,0.4)]"
-                    : "card"
-                }`}
-              >
-                <span
-                  className={`absolute -top-3 left-8 rounded-full px-3.5 py-1 text-[11px] font-bold ${
-                    t.highlight ? "brand-pill text-white" : "border border-line bg-surface text-muted"
-                  }`}
-                >
-                  {t.tag}
-                </span>
-                <div>
-                  <h3 className="text-lg font-semibold">{t.name}</h3>
-                  <p className="mt-1 text-sm text-muted">{t.blurb}</p>
-                </div>
-                <div className="flex items-baseline gap-2">
-                  <span className="font-mono text-4xl font-bold tracking-tight">{t.price}</span>
-                  <span className="text-sm text-muted">{t.unit}</span>
-                </div>
-                <ul className="flex flex-1 flex-col gap-3">
-                  {t.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm text-muted">
-                      <svg className="mt-0.5 shrink-0" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="3" strokeLinecap="round">
-                        <path d="M20 6L9 17l-5-5" />
-                      </svg>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href="/contact"
-                  className={`rounded-xl py-3.5 text-center text-sm font-semibold transition-transform hover:scale-[1.02] active:scale-[0.98] ${
-                    t.highlight
-                      ? "brand-pill text-white shadow-[0_8px_30px_-8px_rgba(34,197,94,0.8)]"
-                      : "border border-line text-foreground hover:border-brand-500/40"
-                  }`}
-                >
-                  {t.cta}
-                </Link>
+        {/* No Reveal wrapper around grid — keeps equal-height stretch reliable */}
+        <SpeaksyPricingCards />
+        <p className="mt-4 text-center text-[12px] leading-relaxed text-muted sm:text-left">
+          <span className="font-semibold text-foreground">*</span> Enterprise
+          rates from under ₹1.5/min based on committed volume, concurrency, and
+          custom architecture. Quoted after scoping.
+        </p>
+
+        {/* Clear volume ladder table */}
+        <Reveal delay={0.12}>
+          <div className="mt-14 sm:mt-16">
+            <SectionHeading
+              eyebrow="Volume rates"
+              title="The more you call, the less you pay per minute."
+              subtitle="Business plans step down automatically with daily volume. Past 300 calls a day, we custom-price with you."
+            />
+            <div className="card mt-10 overflow-hidden rounded-2xl">
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[320px] text-left text-sm">
+                  <thead>
+                    <tr className="border-b border-line bg-neutral-50/80 text-[12px] font-semibold uppercase tracking-wider text-muted">
+                      <th className="px-5 py-3.5 sm:px-6">Plan</th>
+                      <th className="px-5 py-3.5 sm:px-6">Daily call volume</th>
+                      <th className="px-5 py-3.5 text-right sm:px-6">
+                        Rate (per minute)
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {BUSINESS_VOLUME_STEPS.map((row) => (
+                      <tr
+                        key={row.id}
+                        className="border-b border-line last:border-0"
+                      >
+                        <td className="px-5 py-4 font-semibold text-foreground sm:px-6">
+                          {row.plan}
+                        </td>
+                        <td className="px-5 py-4 text-muted sm:px-6">
+                          {row.range}
+                        </td>
+                        <td className="px-5 py-4 text-right font-semibold tabular-nums text-emerald-700 sm:px-6">
+                          {formatRate(row.rate)}
+                        </td>
+                      </tr>
+                    ))}
+                    <tr className="bg-emerald-50/60">
+                      <td className="px-5 py-4 font-semibold text-foreground sm:px-6">
+                        Enterprise
+                      </td>
+                      <td className="px-5 py-4 text-muted sm:px-6">
+                        Beyond 300 calls / day · uncapped
+                      </td>
+                      <td className="px-5 py-4 text-right font-semibold tabular-nums text-emerald-800 sm:px-6">
+                        &lt; ₹1.5*
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal delay={0.2}>
-          <p className="mt-8 text-center text-sm text-muted">
-            All plans bill per <span className="font-semibold text-brand-300">live-call second</span> —
-            ringing, dead air and failed connects are never charged. No setup fees. No annual lock-in.
-          </p>
+            </div>
+          </div>
         </Reveal>
       </div>
     </section>

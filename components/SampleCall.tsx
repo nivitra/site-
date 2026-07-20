@@ -18,7 +18,7 @@ export default function SampleCall({
   badge?: string;
 }) {
   return (
-    <div className="card flex flex-col gap-3 rounded-3xl p-6">
+    <div className="flex flex-col gap-3 rounded-3xl border border-line bg-white p-6 shadow-[0_8px_40px_-24px_rgba(0,0,0,0.1)]">
       <div className="flex items-center justify-between">
         <span className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wide text-muted">
           <span className="relative flex h-2 w-2 rounded-full bg-brand-400 live-dot" />
@@ -30,20 +30,20 @@ export default function SampleCall({
       </div>
 
       {/* the signature living waveform */}
-      <VoiceWaveform className="my-1 opacity-90" />
+      <VoiceWaveform className="my-1 opacity-90 [&_span]:!bg-brand-500/60" />
 
-      <div className="max-w-[90%] self-start rounded-2xl rounded-bl-sm bg-brand-900/70 px-4 py-3 text-sm leading-relaxed text-[#d8f5e0]">
+      <div className="max-w-[90%] self-start rounded-2xl rounded-bl-sm bg-brand-500/10 px-4 py-3 text-sm leading-relaxed text-foreground">
         {agent}
       </div>
-      <div className="max-w-[90%] self-end rounded-2xl rounded-br-sm bg-white/10 px-4 py-3 text-sm leading-relaxed">
+      <div className="max-w-[90%] self-end rounded-2xl rounded-br-sm bg-surface-2 px-4 py-3 text-sm leading-relaxed text-foreground">
         {user}
       </div>
-      <div className="max-w-[90%] self-start rounded-2xl rounded-bl-sm bg-brand-900/70 px-4 py-3 text-sm leading-relaxed text-[#d8f5e0]">
+      <div className="max-w-[90%] self-start rounded-2xl rounded-bl-sm bg-brand-500/10 px-4 py-3 text-sm leading-relaxed text-foreground">
         {agent2}
       </div>
 
-      <div className="mt-1 flex items-center justify-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-center text-xs font-semibold text-brand-300">
-        ✓ {outcome}
+      <div className="mt-1 flex items-center justify-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-center text-xs font-semibold text-brand-700">
+        {outcome}
       </div>
     </div>
   );

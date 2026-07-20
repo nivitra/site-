@@ -1,7 +1,6 @@
 "use client";
 
 import SplitReveal from "./ui/SplitReveal";
-import ScrambleOnView from "./ui/ScrambleOnView";
 import { useEffect, useRef } from "react";
 import { animate } from "animejs";
 
@@ -22,40 +21,35 @@ export default function PageHero({
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
     el.style.opacity = "0";
-    el.style.transform = "translateY(18px)";
+    el.style.transform = "translateY(14px)";
     animate(el, {
       opacity: [0, 1],
-      translateY: [18, 0],
+      translateY: [14, 0],
       duration: 700,
-      delay: 280,
+      delay: 260,
       ease: "out(3)",
     });
   }, []);
 
   return (
-    <section className="grid-bg relative overflow-hidden pb-10 pt-40">
-      <div className="pointer-events-none absolute -top-40 left-1/2 h-[420px] w-[800px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(34,197,94,0.14),transparent)] animate-glow" />
-      <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-5 px-6 text-center">
-        <ScrambleOnView
-          as="span"
-          className="inline-flex items-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-brand-300"
-          duration={600}
-          chars="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        >
+    <section className="relative overflow-hidden pb-12 pt-40">
+      <div className="pointer-events-none absolute -top-32 left-1/2 h-[380px] w-[700px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.05),transparent)]" />
+      <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-5 px-6 text-center">
+        <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-2">
           {eyebrow}
-        </ScrambleOnView>
+        </span>
         <SplitReveal
           as="h1"
           mode="words"
-          delay={80}
-          staggerMs={40}
-          className="text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl"
+          delay={60}
+          staggerMs={36}
+          className="text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl"
         >
           {title}
         </SplitReveal>
         <p
           ref={subRef}
-          className="max-w-2xl text-base leading-relaxed text-muted sm:text-lg"
+          className="max-w-xl text-base leading-relaxed text-muted sm:text-lg"
         >
           {subtitle}
         </p>

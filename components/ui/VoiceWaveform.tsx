@@ -67,7 +67,7 @@ export default function VoiceWaveform({
         <span
           key={i}
           data-bar
-          className="w-[3px] flex-1 rounded-full bg-brand-400/70"
+          className="w-[3px] flex-1 rounded-full bg-white/45"
           style={{ height: "100%", transformOrigin: "center", willChange: "transform" }}
         />
       ))}

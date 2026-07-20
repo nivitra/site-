@@ -9,34 +9,34 @@ import CTASection from "@/components/CTASection";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Speaksy pricing: human-grade voice AI from ₹3.99 per live minute. Billed per second of live talk-time — never for ringing or failed connects. No setup fees.",
+    "Enterprise-grade voice AI from ₹5.2/min. Business down to ₹4.7/min. Enterprise under ₹1.5/min*. Demo POC ₹999. Pay only for live talk-time.",
   alternates: { canonical: "/pricing" },
 };
 
 const pricingFaqs = [
   {
-    q: "What exactly counts as a 'live minute'?",
-    a: "Only the time where the AI agent (or a handed-off human) is actively in conversation with your customer. Ring time, busy signals, dead air, voicemail detections and failed connects cost you nothing. Billing is per second, not rounded up to the minute.",
+    q: "What do I pay for?",
+    a: "Only real conversation time. Ringing, busy signals, and silence don't count. Billing is per second — not rounded up.",
   },
   {
-    q: "Are there any setup, onboarding or platform fees?",
-    a: "No. Zero setup fees, zero monthly platform fees on Starter and Growth. You pay only for live minutes consumed. Enterprise plans can include a platform fee in exchange for steep per-minute discounts.",
+    q: "How does volume pricing work?",
+    a: "Business rates step down with daily call volume: ₹5.2/min up to 100 calls/day, ₹5.0 up to 200, ₹4.7 up to 300. Past 300 calls/day is Enterprise — custom ladders from under ₹1.5/min depending on committed volume and architecture.",
   },
   {
-    q: "Does the price include telephony charges?",
-    a: "If you bring your own telephony (Twilio, Exotel, Plivo, SIP), you pay your carrier directly and Speaksy charges only the AI layer. If you'd rather have one bill, we provision numbers and pass telco costs through at cost — no markup.",
+    q: "Is there a free plan?",
+    a: "No free forever plan. The Demo is a paid proof of concept at ₹999, delivered in 48 hours — 80 talk minutes, custom agent setup, WhatsApp included, full dashboard visibility. Prove it, then scale on Business or Enterprise.",
   },
   {
-    q: "How do volume discounts work?",
-    a: "Above ~2 lakh live minutes per month, per-minute rates step down automatically — Enterprise customers routinely land below ₹3/min. Talk to sales with your volumes and we'll quote the exact ladder.",
+    q: "Are there setup or platform fees?",
+    a: "Demo is a flat ₹999 POC. Business has no setup fee — you pay live-minute rates. Enterprise may include a platform component in exchange for lower committed rates and dedicated infrastructure.",
   },
   {
-    q: "Can I put a hard cap on my monthly spend?",
-    a: "Yes. Set a workspace-level budget cap and Speaksy pauses campaigns automatically when you hit it. You'll never get a surprise invoice.",
+    q: "What about phone charges?",
+    a: "Keep your current phone provider and pay them directly, or take numbers through us on one bill. Your choice.",
   },
   {
-    q: "Is there really a free tier?",
-    a: "Yes — 100 live minutes free on signup, with the full graph builder and all languages. Enough to run a genuine pilot on your own leads before paying a rupee.",
+    q: "Can I cap monthly spend?",
+    a: "Yes. Set a budget limit and campaigns pause automatically when you hit it. No surprise invoices.",
   },
 ];
 
@@ -45,13 +45,13 @@ export default function PricingPage() {
     <>
       <PageHero
         eyebrow="Pricing"
-        title="World-class voice AI. Indian price tag."
-        subtitle="From ₹3.99 per live minute — roughly a third of global platforms and a tenth of a human call center. Billed per second, only when someone is actually talking."
+        title="Enterprise-grade voice AI. Half the industry price."
+        subtitle="Most platforms charge ₹8 to ₹11 per minute for standard voice agents. Speaksy delivers the same human-like capabilities starting at just ₹5.2/min — scaling down as your volume grows."
       />
       <PricingTiers />
       <PricingCalculator />
       <CompareTable />
-      <FAQ items={pricingFaqs} />
+      <FAQ items={pricingFaqs} title="Pricing, answered" />
       <CTASection />
     </>
   );

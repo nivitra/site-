@@ -7,9 +7,9 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "14 Indian Languages — Voice AI in Hindi, Marathi, Telugu, Tamil & more",
+  title: "10 Indian Languages — Voice AI in Hindi, Marathi, Telugu, Tamil & more",
   description:
-    "Speaksy speaks 14 Indian languages natively — Hindi, Hinglish, Marathi, Telugu, Tamil, Gujarati, Kannada, Bengali, Malayalam, Punjabi, Odia, Urdu, Assamese and Indian English. 120 Cr+ speakers reachable with one voice AI platform.",
+    "Speaksy speaks 10 Indian languages natively — Hindi, Hinglish, Marathi, Telugu, Tamil, Gujarati, Kannada, Bengali, Malayalam and Punjabi. 120 Cr+ speakers reachable with one voice AI platform.",
   keywords: [
     "Indian language voice AI",
     "vernacular voice bot",
@@ -24,9 +24,22 @@ export default function LanguagesPage() {
     <>
       <PageHero
         eyebrow="Languages"
-        title="14 languages. 120 crore+ speakers. One agent."
-        subtitle="India doesn't speak one language, and neither should your voice AI. Every Speaksy language is a first-class citizen — native script, native accent, native courtesy — at the same ₹3.99/min."
+        title="10 languages. 120 crore+ speakers. One agent."
+        subtitle="Built on years of listening to how India actually talks — not translated scripts. Every language is first-class: native accent, native courtesy, same price."
       />
+
+      <div className="mx-auto max-w-6xl px-6 pb-4">
+        <Link
+          href="/languages/explore"
+          className="brand-pill inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_18px_-4px_rgba(34,197,94,0.5)]"
+        >
+          Explore languages →
+        </Link>
+        <p className="mt-3 max-w-md text-sm text-muted">
+          Enter Project Bhāratvāṇī — 8 months of field listening, mapped across
+          India.
+        </p>
+      </div>
 
       <section className="pb-24 pt-8">
         <div className="mx-auto max-w-6xl px-6">

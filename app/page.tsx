@@ -1,58 +1,57 @@
 import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import TrustedBy from "@/components/TrustedBy";
-import StatsBand from "@/components/StatsBand";
-import FeatureGrid from "@/components/FeatureGrid";
+import ProductBento from "@/components/product-bento/ProductBento";
+import StoriesBento from "@/components/stories-bento/StoriesBento";
+import IndustryGradientBars from "@/components/gradient-bars/IndustryGradientBars";
+import IntegrationHub from "@/components/integration-hub/IntegrationHub";
+import CompareMatrix from "@/components/compare-matrix/CompareMatrix";
 import PriceTeaser from "@/components/PriceTeaser";
 import CTASection from "@/components/CTASection";
 
-// Heavy interactive sections — code-split so first paint stays lean
 const LanguageShowcase = dynamic(() => import("@/components/LanguageShowcase"), {
   loading: () => <SectionSkeleton />,
 });
-const IntegrationsMarquee = dynamic(() => import("@/components/IntegrationsMarquee"));
-const Benchmarks = dynamic(() => import("@/components/Benchmarks"), {
+const HowItWorks = dynamic(() => import("@/components/HowItWorks"), {
   loading: () => <SectionSkeleton />,
 });
-const GraphShowcase = dynamic(() => import("@/components/GraphShowcase"), {
+const UseCases = dynamic(() => import("@/components/UseCases"), {
   loading: () => <SectionSkeleton />,
 });
-const HandoffShowcase = dynamic(() => import("@/components/HandoffShowcase"), {
-  loading: () => <SectionSkeleton />,
-});
-const Personas = dynamic(() => import("@/components/Personas"));
-const IndustriesTabs = dynamic(() => import("@/components/IndustriesTabs"), {
-  loading: () => <SectionSkeleton />,
-});
-const Testimonials = dynamic(() => import("@/components/Testimonials"));
 const FAQ = dynamic(() => import("@/components/FAQ"));
+const StackIntegration = dynamic(
+  () => import("@/components/stack-integration/StackIntegration")
+);
 
 function SectionSkeleton() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-24" aria-hidden>
-      <div className="mx-auto h-4 w-32 animate-pulse rounded bg-white/5" />
-      <div className="mx-auto mt-4 h-10 w-72 max-w-full animate-pulse rounded bg-white/5" />
-      <div className="mt-12 h-48 animate-pulse rounded-3xl bg-white/[0.03]" />
+    <div className="mx-auto max-w-6xl px-6 py-20" aria-hidden>
+      <div className="mx-auto h-3 w-24 animate-pulse rounded bg-black/5" />
+      <div className="mx-auto mt-5 h-9 w-72 max-w-full animate-pulse rounded bg-black/5" />
+      <div className="mt-12 h-40 animate-pulse rounded-3xl bg-black/[0.03]" />
     </div>
   );
 }
 
+/**
+ * Consumer homepage — white theme, blueprint order.
+ * Industries use vertical gradient bars (expand → industry page).
+ */
 export default function Home() {
   return (
     <>
       <Hero />
       <TrustedBy />
-      <StatsBand />
+      <StoriesBento />
+      <ProductBento />
+      <IndustryGradientBars />
+      <UseCases />
       <LanguageShowcase />
-      <FeatureGrid />
-      <Benchmarks />
-      <GraphShowcase />
-      <HandoffShowcase />
-      <Personas />
-      <IndustriesTabs />
+      <HowItWorks />
+      <IntegrationHub />
+      <StackIntegration />
+      <CompareMatrix />
       <PriceTeaser />
-      <IntegrationsMarquee />
-      <Testimonials />
       <FAQ />
       <CTASection />
     </>

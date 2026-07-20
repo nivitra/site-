@@ -37,6 +37,10 @@ export default function AnimeCounter({
       if (compact && to >= 1_000_000) {
         return `${prefix}${(v / 1_000_000).toFixed(decimals || 1)}M${suffix}`;
       }
+      // Indian scale: 1L = 1 lakh (100,000)
+      if (compact && to >= 100_000) {
+        return `${prefix}${(v / 100_000).toFixed(decimals || 0)}L${suffix}`;
+      }
       if (compact && to >= 1_000) {
         return `${prefix}${(v / 1_000).toFixed(decimals || 0)}K${suffix}`;
       }

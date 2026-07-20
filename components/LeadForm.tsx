@@ -42,7 +42,7 @@ const volumes = [
 ];
 
 const inputCls =
-  "w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm text-foreground placeholder:text-muted/60 outline-none transition-colors focus:border-brand-500/60 focus:ring-2 focus:ring-brand-500/20";
+  "w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm text-foreground placeholder:text-muted/50 outline-none transition-colors focus:border-line-strong focus:ring-2 focus:ring-white/10";
 
 export default function LeadForm() {
   const [form, setForm] = useState<FormState>(initial);
@@ -112,7 +112,7 @@ export default function LeadForm() {
             <h3 className="text-2xl font-semibold">You&apos;re on the list, {form.name.split(" ")[0]}!</h3>
             <p className="max-w-sm text-sm leading-relaxed text-muted">
               Our team will call you within one working day — and yes, the first call
-              you get might just be a Speaksy agent. See if you can tell. 😉
+              you get might just be a Speaksy agent. See if you can tell.
             </p>
             <button
               onClick={() => {

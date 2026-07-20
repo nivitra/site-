@@ -92,8 +92,8 @@ export default function CustomersPage() {
                         {c.company}
                       </span>
                       <span className="text-xs text-muted">{c.sector}</span>
-                      <span className="rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-[11px] font-semibold text-brand-300">
-                        🗣 {c.lang}
+                      <span className="rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-[11px] font-semibold text-brand-700">
+                        {c.lang}
                       </span>
                     </div>
                     <h2 className="text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">

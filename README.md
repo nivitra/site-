@@ -21,7 +21,7 @@ npm start       # serve production build
 | `/platform` | 5-layer pipeline explorer, graph & handoff, developer API cards, compliance grid |
 | `/pricing` | 3 tiers, live ROI calculator, comparison table, pricing FAQ |
 | `/solutions` | Use-case cards, industry explorer, how-it-works |
-| `/languages` | Index of all 14 languages |
+| `/languages` | Index of all 10 languages |
 | `/languages/[slug]` | SEO-first language pages (native script, sample dialogue, use cases, voices, FAQ + JSON-LD) |
 | `/customers` | 3 long-form case studies with metrics |
 | `/integrations` | Telephony / STT / LLM / TTS / CRM stack |
@@ -45,7 +45,7 @@ npm start       # serve production build
 ```
 app/              routes, layout, sitemap, robots, api/leads
 components/       one file per section; ui/ = Reveal, SectionHeading, CountUp
-lib/              languages.ts (14 langs), posts.ts (blog)
+lib/              languages.ts (10 langs), posts.ts (blog)
 public/brand/     web-optimized logo/icon assets
 ```
 

@@ -2,38 +2,35 @@
 
 import AnimeCounter from "./ui/AnimeCounter";
 import PulseStat from "./ui/PulseStat";
-import ScrambleOnView from "./ui/ScrambleOnView";
 import Stagger from "./ui/Stagger";
 
 const stats = [
-  { to: 800, prefix: "<", suffix: "ms", label: "End-to-end voice latency", compact: false },
-  { to: 2_000_000, prefix: "", suffix: "+", label: "Calls handled every month", compact: true },
-  { to: 14, prefix: "", suffix: "", label: "Indian languages, native accents", compact: false },
-  { to: 68, prefix: "", suffix: "%", label: "Cheaper than any alternative", compact: false },
+  { to: 100_000, suffix: "+", label: "Calls every month", compact: true },
+  { to: 10, suffix: "", label: "Indian languages", compact: false },
+  { to: 80, suffix: "%+", label: "Think it's a real person", compact: false },
+  { to: 3.99, suffix: "", label: "Starting price · per minute", compact: false, decimals: 2, prefix: "₹" },
 ];
 
 export default function StatsBand() {
   return (
-    <section className="relative overflow-hidden border-y border-line bg-surface/50">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(34,197,94,0.06),transparent_65%)]" />
-      <Stagger className="relative mx-auto grid max-w-6xl grid-cols-2 gap-y-10 px-6 py-14 md:grid-cols-4">
+    <section className="relative overflow-hidden border-y border-line bg-surface/30">
+      <Stagger className="relative mx-auto grid max-w-6xl grid-cols-2 gap-y-10 px-6 py-12 md:grid-cols-4 md:py-16">
         {stats.map((s) => (
           <div key={s.label} data-stagger>
             <PulseStat className="gap-2 text-center">
-              <span className="font-mono text-3xl font-semibold text-brand-400 sm:text-4xl">
-                {s.compact ? (
+              <span className="text-3xl font-semibold tracking-tight text-brand-300 sm:text-4xl">
+                {"compact" in s && s.compact ? (
                   <AnimeCounter to={s.to} compact decimals={0} suffix="+" />
                 ) : (
-                  <AnimeCounter to={s.to} prefix={s.prefix} suffix={s.suffix} />
+                  <AnimeCounter
+                    to={s.to}
+                    prefix={"prefix" in s ? s.prefix : ""}
+                    suffix={s.suffix}
+                    decimals={"decimals" in s ? s.decimals : 0}
+                  />
                 )}
               </span>
-              <ScrambleOnView
-                className="max-w-[180px] text-sm text-muted"
-                duration={700}
-                chars="ABCDEFGHIJKLMNOPQRSTUVWXYZ "
-              >
-                {s.label}
-              </ScrambleOnView>
+              <span className="mx-auto max-w-[170px] text-sm leading-snug text-muted">{s.label}</span>
             </PulseStat>
           </div>
         ))}

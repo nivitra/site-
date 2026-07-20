@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import Reveal from "./ui/Reveal";
 import SectionHeading from "./ui/SectionHeading";
 
-const SPEAKSY_RATE = 3.99; // ₹ per live minute
-const GLOBAL_AI_RATE = 11; // ₹ per live minute (typical global platform, converted)
+const SPEAKSY_RATE = 5.2; // ₹ per live minute (Business Starter)
+const GLOBAL_AI_RATE = 10; // ₹ per live minute (typical ₹8–11 industry)
 const HUMAN_RATE = 28; // ₹ per live minute (loaded telecaller cost)
 
 const inr = (n: number) =>
@@ -105,21 +105,21 @@ export default function PricingCalculator() {
             </div>
 
             <div className="flex flex-col gap-4">
-              <div className="flex items-center justify-between rounded-2xl bg-white/[0.04] px-6 py-4">
+              <div className="flex items-center justify-between rounded-2xl border border-line bg-surface-2 px-6 py-4">
                 <div>
                   <p className="text-sm font-medium text-muted">Traditional call center</p>
-                  <p className="text-[11px] text-muted/70">~₹{HUMAN_RATE}/live min, loaded cost</p>
+                  <p className="text-[11px] text-muted-2">~₹{HUMAN_RATE}/live min, loaded cost</p>
                 </div>
-                <p className="font-mono text-lg font-semibold text-muted line-through decoration-red-400/60">
+                <p className="font-mono text-lg font-semibold text-muted line-through decoration-red-500/50">
                   {inr(humanCost)}
                 </p>
               </div>
-              <div className="flex items-center justify-between rounded-2xl bg-white/[0.04] px-6 py-4">
+              <div className="flex items-center justify-between rounded-2xl border border-line bg-surface-2 px-6 py-4">
                 <div>
                   <p className="text-sm font-medium text-muted">Global voice AI platform</p>
-                  <p className="text-[11px] text-muted/70">~₹{GLOBAL_AI_RATE}/min, billed in USD</p>
+                  <p className="text-[11px] text-muted-2">~₹{GLOBAL_AI_RATE}/min, billed in USD</p>
                 </div>
-                <p className="font-mono text-lg font-semibold text-yellow-200/80">{inr(globalCost)}</p>
+                <p className="font-mono text-lg font-semibold text-foreground">{inr(globalCost)}</p>
               </div>
               <motion.div
                 key={Math.round(speaksyCost)}
@@ -134,11 +134,11 @@ export default function PricingCalculator() {
                 <p className="font-mono text-2xl font-bold text-white">{inr(speaksyCost)}</p>
               </motion.div>
 
-              <div className="mt-2 rounded-2xl border border-brand-500/30 bg-brand-500/10 p-6 text-center">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
+              <div className="mt-2 rounded-2xl border border-brand-500/25 bg-brand-500/10 p-6 text-center">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-700">
                   You save every year
                 </p>
-                <p className="mt-2 font-mono text-3xl font-bold text-brand-300 sm:text-4xl">
+                <p className="mt-2 font-mono text-3xl font-bold text-brand-700 sm:text-4xl">
                   {inr(savingsVsHuman * 12)}
                 </p>
                 <p className="mt-2 text-xs text-muted">

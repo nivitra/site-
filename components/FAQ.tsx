@@ -8,63 +8,85 @@ export type FaqItem = { q: string; a: string };
 
 const defaultFaqs: FaqItem[] = [
   {
-    q: "How is Speaksy so much cheaper than other voice AI platforms?",
-    a: "Three reasons: our speech stack is optimized for Indian telephony (8kHz codecs, regional models) which slashes compute cost; we bill per live-call second — never for ringing, dead air or failed connects; and we're built in India, priced in rupees, without Silicon Valley margins baked in.",
+    q: "Will customers know it's AI?",
+    a: "Usually not. Many people finish the full call without realizing. You can also disclose at the start if you prefer — your rules, your choice.",
   },
   {
-    q: "Will customers know they're talking to an AI?",
-    a: "In blind evaluations, over 80% of customers complete calls without realizing it's AI. Speaksy handles interruptions, code-switching (Hinglish, Tanglish), fillers and back-channels naturally. We also support explicit AI disclosure at call start wherever your compliance team requires it.",
+    q: "What if the conversation gets complicated?",
+    a: "Speaksy warm-transfers to your team member with the full conversation context. The customer never has to repeat themselves.",
   },
   {
-    q: "What happens when the AI can't handle a conversation?",
-    a: "Speaksy detects complex objections or high-intent moments in real time and bridges the live call to your human agent in under 1.5 seconds — with the full transcript and customer context on their screen. The customer never repeats themselves.",
+    q: "Which languages are supported?",
+    a: "10: Hindi, Hinglish, Marathi, Telugu, Tamil, Gujarati, Kannada, Bengali, Malayalam, and Punjabi.",
   },
   {
-    q: "Can I use my existing phone numbers and telephony provider?",
-    a: "Yes. Speaksy supports bring-your-own-telephony with Twilio, Exotel, Plivo, Airtel IQ or any generic SIP trunk. You can also buy numbers directly through us if you prefer a single bill.",
+    q: "How much does it cost?",
+    a: "From ₹5.2 per minute — only when talking. Ringing is free. Business steps down to ₹4.7/min; Enterprise can go under ₹1.5/min at high volume.",
   },
   {
-    q: "Which languages does Speaksy support?",
-    a: "14 languages: Hindi, Hinglish, Marathi, Telugu, Tamil, Gujarati, Kannada, Bengali, Malayalam, Punjabi, Odia, Urdu, Assamese and Indian English — with native accents and natural mid-sentence code-switching. Each has its own dedicated page under /languages.",
+    q: "Can we use our own number / Exotel / Twilio?",
+    a: "Yes. Whatever number and phone system you already use will work. Need a new one? We can provide that too.",
   },
   {
-    q: "Is Speaksy compliant for BFSI use cases?",
-    a: "Yes. TRAI calling windows and DND scrubbing are enforced automatically on every campaign, PII like PAN and Aadhaar numbers is masked in real time from transcripts, data stays on Indian servers for DPDP compliance, and everything is encrypted at rest with AES-256.",
+    q: "How long until we go live?",
+    a: "Simple use cases often go live the same week. You tell us what to say, we set it up, you hear a live call on your number, then go live.",
   },
   {
-    q: "How fast can I go live?",
-    a: "With a pre-built industry template, same day. A custom graph agent with your CRM integration typically takes 3–5 days. No setup fees either way.",
+    q: "Is it ready for banking and finance?",
+    a: "Yes. Calling rules, private data handling, and India-hosted servers are built in. Ready for your compliance team's questions.",
   },
 ];
 
-export default function FAQ({ items = defaultFaqs, heading = true }: { items?: FaqItem[]; heading?: boolean }) {
+export default function FAQ({
+  items = defaultFaqs,
+  heading = true,
+  eyebrow = "FAQ",
+  title = "Straight answers",
+}: {
+  items?: FaqItem[];
+  heading?: boolean;
+  eyebrow?: string;
+  title?: string;
+}) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="py-24">
-      <div className="mx-auto max-w-3xl px-6">
-        {heading && (
-          <SectionHeading
-            eyebrow="FAQ"
-            title="Questions, answered straight."
-          />
-        )}
-        <div className="mt-12 flex flex-col gap-3">
+    <section className="section">
+      <div className="mx-auto max-w-2xl px-6">
+        {heading && <SectionHeading eyebrow={eyebrow} title={title} />}
+        <div className="mt-12 flex flex-col gap-2">
           {items.map((f, i) => {
             const isOpen = open === i;
             return (
-              <div key={f.q} className={`card overflow-hidden rounded-2xl transition-colors ${isOpen ? "border-brand-500/30" : ""}`}>
+              <div
+                key={f.q}
+                className={`overflow-hidden rounded-2xl border transition-colors ${
+                  isOpen
+                    ? "border-brand-500/30 bg-black/[0.02]"
+                    : "border-line bg-background"
+                }`}
+              >
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5"
                 >
-                  <span className="text-sm font-semibold sm:text-base">{f.q}</span>
+                  <span className="text-sm font-semibold text-foreground sm:text-[15px]">
+                    {f.q}
+                  </span>
                   <motion.span
                     animate={{ rotate: isOpen ? 45 : 0 }}
-                    transition={{ duration: 0.25 }}
-                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line text-brand-400"
+                    transition={{ duration: 0.2 }}
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line text-brand-600"
                   >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                    >
                       <path d="M12 5v14M5 12h14" />
                     </svg>
                   </motion.span>
@@ -75,9 +97,11 @@ export default function FAQ({ items = defaultFaqs, heading = true }: { items?: F
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      transition={{ duration: 0.25 }}
                     >
-                      <p className="px-6 pb-6 text-sm leading-relaxed text-muted">{f.a}</p>
+                      <p className="px-5 pb-5 text-[15px] leading-relaxed text-muted sm:px-6 sm:pb-6">
+                        {f.a}
+                      </p>
                     </motion.div>
                   )}
                 </AnimatePresence>

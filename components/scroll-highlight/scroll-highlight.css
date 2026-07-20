@@ -1,0 +1,37 @@
+/* Scroll Highlight — exact paint wipe from the recording / Jhey technique */
+
+.scroll-hl-mark {
+  --highlighted: 0;
+  --highlight: #1570c9;
+  --hl-text: #fff;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+}
+
+.scroll-hl-paint {
+  /* 120deg split gradient = diagonal highlighter edge while wiping */
+  background-image: linear-gradient(
+    120deg,
+    var(--highlight) 50%,
+    transparent 50%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  background-position: calc((1 - var(--highlighted)) * 110%) 0;
+  transition: background-position 1s cubic-bezier(0.22, 1, 0.36, 1);
+  color: var(--hl-text);
+  /* Each wrapped line gets its own highlight block */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0.12em 0.18em;
+  border-radius: 0.15em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hl-paint {
+    transition: none;
+    background-position: 0 0;
+  }
+}

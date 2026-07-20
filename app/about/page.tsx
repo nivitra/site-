@@ -7,23 +7,23 @@ import CTASection from "@/components/CTASection";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Speaksy is building India's voice AI — 14 languages, sub-800ms conversations, at prices every Indian business can afford. Built in India, beats the world.",
+    "Speaksy is building India's voice AI — 10 languages, sub-800ms conversations, at prices every Indian business can afford. Built in India, beats the world.",
   alternates: { canonical: "/about" },
 };
 
 const values = [
-  ["🇮🇳", "Bharat-first, not Bharat-later", "Odia and Assamese ship with the same care as English. The next 50 crore customers speak neither Silicon Valley's language nor its price points."],
-  ["📞", "The phone call is sacred", "For most of India, the call is still where trust forms and money moves. We treat every second of latency and every mispronounced name as a broken promise."],
-  ["🧮", "Frugal engineering, premium output", "World-class doesn't have to mean dollar-priced. We optimize relentlessly so ₹3.99 buys what others sell for ₹12."],
-  ["🔍", "Radically auditable", "Deterministic graphs, immutable versions, 100% call QA. If you can't show a regulator exactly what your AI said, you shouldn't be dialing."],
+  ["01", "Bharat-first, not Bharat-later", "Hindi and Tamil ship with the same care as Hinglish. The next 50 crore customers speak neither Silicon Valley's language nor its price points."],
+  ["02", "The phone call is sacred", "For most of India, the call is still where trust forms and money moves. We treat every second of latency and every mispronounced name as a broken promise."],
+  ["03", "Frugal engineering, premium output", "World-class doesn't have to mean dollar-priced. We optimize relentlessly so ₹3.99 buys what others sell for ₹12."],
+  ["04", "Radically auditable", "Deterministic graphs, immutable versions, 100% call QA. If you can't show a regulator exactly what your AI said, you shouldn't be dialing."],
 ];
 
 const timeline = [
   ["2024", "The itch", "Our founders watch a Pune NBFC pay dollar rates for a voice bot that couldn't say 'साडेचार हजार' correctly. The question forms: why is Indian voice AI priced and built for America?"],
   ["Early 2025", "First stack", "Speaksy's streaming pipeline hits sub-second round trips on real Exotel trunks. First Hinglish model trained on consented, PII-scrubbed Indian call audio."],
   ["Mid 2025", "First customers", "A Mumbai collections team and a Hyderabad EdTech go live. The Marathi/Telugu campaigns outperform their human benchmarks in week two."],
-  ["Late 2025", "The graph engine", "Prompt spaghetti replaced by versioned dialogue graphs. Human handoff ships — AI does volume, humans close. 14th language (Assamese) reaches production quality."],
-  ["2026", "Scale", "2M+ calls a month across BFSI, D2C, EdTech, healthcare and logistics. Same mission, bigger phone bill: built in India, beats the world."],
+  ["Late 2025", "The graph engine", "Prompt spaghetti replaced by versioned dialogue graphs. Human handoff ships — AI does volume, humans close. All 10 gallery languages reach production quality."],
+  ["2026", "Scale", "1L+ calls a month across BFSI, D2C, EdTech, healthcare and logistics. Same mission, bigger phone bill: built in India, beats the world."],
 ];
 
 const team = [
@@ -32,7 +32,7 @@ const team = [
   ["Aniruddh Rao", "Voice ML Lead", "Trains the models that make 'नमस्कार' sound like home in nine scripts."],
   ["Ketaki Deshmukh", "Head of Linguistics", "Guardian of honorifics, dialects and everything global platforms get wrong about Indian speech."],
   ["Nandini Iyer", "Compliance & Trust", "Makes TRAI windows, DND scrubbing and DPDP residency non-negotiable platform defaults."],
-  ["Ravi Teja", "Solutions", "Turns 'our telecallers say this' into graph agents that say it better, in 14 languages."],
+  ["Ravi Teja", "Solutions", "Turns 'our telecallers say this' into graph agents that say it better, in 10 languages."],
 ];
 
 export default function AboutPage() {
@@ -49,7 +49,7 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-y-8 px-6 text-center md:grid-cols-4">
           {[
             ["14", "languages in production"],
-            ["2M+", "calls handled monthly"],
+            ["1L+", "calls handled monthly"],
             ["<800ms", "conversation latency"],
             ["₹3.99", "per live minute, from"],
           ].map(([n, l], i) => (
@@ -64,7 +64,7 @@ export default function AboutPage() {
       {/* story timeline */}
       <section className="py-24">
         <div className="mx-auto max-w-4xl px-6">
-          <SectionHeading eyebrow="The Story" title="From a mispronounced number to two million calls." />
+          <SectionHeading eyebrow="The Story" title="From a mispronounced number to a lakh+ calls a month." />
           <div className="relative mt-14 flex flex-col gap-10 border-l border-brand-500/30 pl-8">
             {timeline.map(([year, title, body], i) => (
               <Reveal key={year} delay={i * 0.08}>
@@ -88,7 +88,9 @@ export default function AboutPage() {
             {values.map(([icon, title, body], i) => (
               <Reveal key={title} delay={(i % 2) * 0.1}>
                 <div className="card card-hover h-full rounded-2xl p-7">
-                  <span className="text-2xl">{icon}</span>
+                  <span className="inline-flex rounded-md bg-brand-500/10 px-2 py-1 font-mono text-[11px] font-semibold text-brand-700">
+                    {icon}
+                  </span>
                   <h3 className="mt-3 text-lg font-semibold">{title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{body}</p>
                 </div>

@@ -8,7 +8,7 @@ const personas = [
   {
     id: "owner",
     label: "I run a business",
-    icon: "🏪",
+    icon: "Biz",
     heading: "Think of it as your best telecaller — times a thousand.",
     points: [
       ["What it does", "Speaksy is a computer that makes and answers phone calls for you, and talks exactly like a person — in Hindi, Marathi, Telugu, or whichever language your customers speak."],
@@ -20,7 +20,7 @@ const personas = [
   {
     id: "ops",
     label: "I run operations / a call center",
-    icon: "📈",
+    icon: "Ops",
     heading: "Your dialer, agents and QA team — collapsed into one dashboard.",
     points: [
       ["Coverage", "10,000 parallel calls, propensity-sorted queues, TRAI-window and DND compliance enforced automatically. 100% of leads touched within SLA, every day."],
@@ -32,7 +32,7 @@ const personas = [
   {
     id: "dev",
     label: "I'm a developer",
-    icon: "⚡",
+    icon: "Dev",
     heading: "One POST request. Sub-800ms round trips. Zero telephony pain.",
     points: [
       ["Integration", "REST APIs for calls, batches and agents. Webhooks fire with dispositions, transcripts and recordings the moment a call ends. Go live in an afternoon."],
@@ -72,8 +72,9 @@ export default function Personas() {
                   transition={{ type: "spring", stiffness: 380, damping: 32 }}
                 />
               )}
-              <span className="relative">
-                {per.icon} {per.label}
+              <span className="relative inline-flex items-center gap-1.5">
+                <span className="font-mono text-[10px] opacity-70">{per.icon}</span>
+                {per.label}
               </span>
             </button>
           ))}

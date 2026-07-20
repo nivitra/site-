@@ -98,10 +98,10 @@ export default function AmbientField({ className = "" }: { className?: string })
   }, []);
 
   const orbData: Orb[] = [
-    { x: 18, y: 22, s: 340, c: "rgba(34,197,94,0.18)", blur: 80, speed: 1 },
-    { x: 78, y: 18, s: 260, c: "rgba(74,222,128,0.12)", blur: 70, speed: 1.2 },
-    { x: 62, y: 68, s: 300, c: "rgba(22,163,74,0.14)", blur: 90, speed: 0.9 },
-    { x: 28, y: 72, s: 180, c: "rgba(134,239,172,0.1)", blur: 50, speed: 1.4 },
+    { x: 18, y: 22, s: 360, c: "rgba(255,255,255,0.05)", blur: 90, speed: 1 },
+    { x: 78, y: 18, s: 280, c: "rgba(255,255,255,0.035)", blur: 80, speed: 1.2 },
+    { x: 62, y: 68, s: 300, c: "rgba(34,197,94,0.05)", blur: 100, speed: 0.9 },
+    { x: 28, y: 72, s: 200, c: "rgba(255,255,255,0.03)", blur: 60, speed: 1.4 },
   ];
 
   return (
@@ -110,8 +110,7 @@ export default function AmbientField({ className = "" }: { className?: string })
       aria-hidden
       className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}
     >
-      {/* soft radial wash */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgba(34,197,94,0.12),transparent_55%),radial-gradient(ellipse_at_80%_60%,rgba(74,222,128,0.08),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_10%,rgba(255,255,255,0.04),transparent_50%),radial-gradient(ellipse_at_85%_50%,rgba(34,197,94,0.04),transparent_45%)]" />
 
       {orbData.map((o, i) => (
         <div
@@ -132,35 +131,32 @@ export default function AmbientField({ className = "" }: { className?: string })
         />
       ))}
 
-      {/* decorative orbit rings near call demo */}
       <div
         data-ring
-        className="absolute right-[8%] top-[18%] hidden h-[340px] w-[340px] rounded-full border border-brand-400/10 lg:block"
+        className="absolute right-[8%] top-[18%] hidden h-[340px] w-[340px] rounded-full border border-white/[0.04] lg:block"
         style={{ willChange: "transform" }}
       />
       <div
         data-ring
-        className="absolute right-[4%] top-[12%] hidden h-[420px] w-[420px] rounded-full border border-dashed border-brand-400/10 lg:block"
+        className="absolute right-[4%] top-[12%] hidden h-[420px] w-[420px] rounded-full border border-dashed border-white/[0.04] lg:block"
         style={{ willChange: "transform" }}
       />
       <div
         data-ring
-        className="absolute right-[12%] top-[24%] hidden h-[260px] w-[260px] rounded-full border border-brand-300/10 lg:block"
+        className="absolute right-[12%] top-[24%] hidden h-[260px] w-[260px] rounded-full border border-white/[0.03] lg:block"
         style={{ willChange: "transform" }}
       />
 
-      {/* rising micro-particles */}
-      {Array.from({ length: 18 }).map((_, i) => (
+      {Array.from({ length: 12 }).map((_, i) => (
         <span
           key={i}
           data-p
-          className="absolute h-1 w-1 rounded-full bg-brand-300/60"
+          className="absolute h-0.5 w-0.5 rounded-full bg-white/40"
           style={{
             left: `${6 + ((i * 17) % 88)}%`,
             top: `${40 + ((i * 23) % 50)}%`,
             opacity: 0,
             willChange: "transform, opacity",
-            boxShadow: "0 0 8px rgba(74,222,128,0.5)",
           }}
         />
       ))}

@@ -137,8 +137,8 @@ export default async function LanguagePage({
             <Reveal delay={0.3}>
               <div className="mt-2 flex flex-wrap gap-2">
                 {lang.regions.map((r) => (
-                  <span key={r} className="rounded-full bg-white/[0.05] px-3 py-1 text-xs text-muted">
-                    📍 {r}
+                  <span key={r} className="rounded-full bg-black/5 px-3 py-1 text-xs text-muted">
+                    {r}
                   </span>
                 ))}
               </div>
@@ -170,7 +170,7 @@ export default async function LanguagePage({
                 {lang.dialogue.agent2}
               </div>
               <div className="mt-1 flex items-center justify-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-xs font-semibold text-brand-300" dir="ltr">
-                ✓ Outcome: Payment promised · disposition logged to CRM
+                Outcome: Payment promised · disposition logged to CRM
               </div>
             </div>
           </Reveal>
@@ -272,7 +272,10 @@ export default async function LanguagePage({
       {/* FAQ (static markup for SEO) */}
       <section className="py-20">
         <div className="mx-auto max-w-3xl px-6">
-          <SectionHeading eyebrow="FAQ" title={`${lang.name} voice AI, common questions`} />
+          <SectionHeading
+            eyebrow="FAQ"
+            title={`${lang.name} voice AI, common questions`}
+          />
           <div className="mt-10 flex flex-col gap-4">
             {faqs.map((f, i) => (
               <Reveal key={f.q} delay={i * 0.06}>

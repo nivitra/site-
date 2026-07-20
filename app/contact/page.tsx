@@ -6,24 +6,24 @@ import Reveal from "@/components/ui/Reveal";
 export const metadata: Metadata = {
   title: "Book a Demo",
   description:
-    "Book a live Speaksy demo — we'll run a voice AI agent on your actual use case, in your language, on a real phone call.",
+    "Book a live Speaksy demo — hear an AI agent handle your use case, in your language, on a real phone call.",
   alternates: { canonical: "/contact" },
 };
 
 const expectations = [
-  ["📞", "A real call, not a slide deck", "We'll dial your number with an agent configured for your use case, live on the demo."],
-  ["🗣️", "Your language, your script", "Hindi, Hinglish, Tamil, Marathi — bring your actual telecaller script and hear it come alive."],
-  ["🧮", "A pricing sheet in rupees", "Transparent per-minute rates and a savings estimate against your current setup, on the spot."],
-  ["⚡", "Pilot in days", "If it's a fit, we'll scope a free 100-minute pilot on your real leads the same week."],
+  ["01", "A real call", "We dial your number with Speaksy set up for your use case — live, not a recording."],
+  ["02", "Your language", "Hindi, Hinglish, Tamil, Marathi, or whichever your customers speak."],
+  ["03", "Clear pricing", "Rates in rupees and a simple savings view against how you operate today."],
+  ["04", "Pilot in days", "If it fits, start a free 100-minute pilot on real leads the same week."],
 ];
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Book a Demo"
-        title="Twenty minutes. One live call. Zero slides."
-        subtitle="Tell us what you're trying to automate and we'll show you Speaksy handling it — on a real phone line, in your customer's language."
+        eyebrow="Free demo"
+        title="20 minutes. A live call on your number."
+        subtitle="Tell us what you want to automate. We'll call you with Speaksy — your language, your use case."
       />
       <section className="pb-24 pt-8">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1fr_1.15fr]">
@@ -31,22 +31,22 @@ export default function ContactPage() {
             <Reveal>
               <h2 className="text-xl font-semibold">What to expect</h2>
             </Reveal>
-            {expectations.map(([icon, title, body], i) => (
+            {expectations.map(([n, title, body], i) => (
               <Reveal key={title} delay={0.08 * (i + 1)}>
                 <div className="card flex items-start gap-4 rounded-2xl p-5">
-                  <span className="text-2xl">{icon}</span>
+                  <span className="font-mono text-xs font-medium tracking-widest text-muted-2">{n}</span>
                   <div>
-                    <h3 className="font-semibold">{title}</h3>
+                    <h3 className="font-medium">{title}</h3>
                     <p className="mt-1 text-sm leading-relaxed text-muted">{body}</p>
                   </div>
                 </div>
               </Reveal>
             ))}
             <Reveal delay={0.45}>
-              <div className="rounded-2xl border border-brand-500/25 bg-brand-500/5 p-5">
+              <div className="rounded-2xl border border-line bg-white/[0.02] p-5">
                 <p className="text-sm text-muted">
                   Prefer email? Write to{" "}
-                  <a href="mailto:hello@speaksy.in" className="font-semibold text-brand-400 hover:text-brand-300">
+                  <a href="mailto:hello@speaksy.in" className="font-medium text-foreground transition-opacity hover:opacity-70">
                     hello@speaksy.in
                   </a>{" "}
                   — we reply within a working day.

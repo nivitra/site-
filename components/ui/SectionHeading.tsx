@@ -1,8 +1,6 @@
 "use client";
 
 import Reveal from "./Reveal";
-import SplitReveal from "./SplitReveal";
-import ScrambleOnView from "./ScrambleOnView";
 
 export default function SectionHeading({
   eyebrow,
@@ -17,26 +15,17 @@ export default function SectionHeading({
 }) {
   const alignCls = align === "center" ? "text-center mx-auto items-center" : "text-left items-start";
   return (
-    <Reveal className={`flex max-w-3xl flex-col gap-4 ${alignCls}`}>
-      <ScrambleOnView
-        as="span"
-        className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-brand-300"
-        duration={650}
-        chars="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-      >
+    <Reveal className={`flex max-w-2xl flex-col gap-3 ${alignCls}`}>
+      <span className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-400">
         {eyebrow}
-      </ScrambleOnView>
-      <SplitReveal
-        as="h2"
-        mode="words"
-        onMount={false}
-        staggerMs={42}
-        className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]"
-      >
+      </span>
+      <h2 className="text-[1.65rem] font-semibold leading-tight tracking-tight text-foreground sm:text-3xl lg:text-[2.15rem]">
         {title}
-      </SplitReveal>
+      </h2>
       {subtitle && (
-        <p className="text-base leading-relaxed text-muted sm:text-lg">{subtitle}</p>
+        <p className="max-w-xl text-[15px] leading-relaxed text-muted sm:text-base">
+          {subtitle}
+        </p>
       )}
     </Reveal>
   );
