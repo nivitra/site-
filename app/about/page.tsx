@@ -7,32 +7,85 @@ import CTASection from "@/components/CTASection";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Speaksy is building India's voice AI — 10 languages, sub-800ms conversations, at prices every Indian business can afford. Built in India, beats the world.",
+    "The Speaksy origin story — born at a hackathon in 2024, revived in 2026 by four builders obsessed with making AI voice agents that actually sound human. Built in India, beats the world.",
   alternates: { canonical: "/about" },
 };
 
-const values = [
-  ["01", "Bharat-first, not Bharat-later", "Hindi and Tamil ship with the same care as Hinglish. The next 50 crore customers speak neither Silicon Valley's language nor its price points."],
-  ["02", "The phone call is sacred", "For most of India, the call is still where trust forms and money moves. We treat every second of latency and every mispronounced name as a broken promise."],
-  ["03", "Frugal engineering, premium output", "World-class doesn't have to mean dollar-priced. We optimize relentlessly so ₹3.99 buys what others sell for ₹12."],
-  ["04", "Radically auditable", "Deterministic graphs, immutable versions, 100% call QA. If you can't show a regulator exactly what your AI said, you shouldn't be dialing."],
+/* ─── founder data ─── */
+const founders = [
+  {
+    name: "Shashank Thamali",
+    role: "Co-Founder & CEO",
+    bio: "Stumbled onto the voice agent idea in 2026 and couldn't stop thinking about it. Rebuilt, refined, and pushed it further than a weekend hackathon ever could — then turned it into a company.",
+  },
+  {
+    name: "Sai Chaitanya Kareda",
+    role: "Co-Founder & CTO",
+    bio: "Heard whispers about 'that voice agent thing' and went all in. The architect behind Speaksy's streaming pipeline, low-latency infrastructure, and everything that makes the tech actually work.",
+  },
+  {
+    name: "Nivas Salla",
+    role: "Chief Vision Officer",
+    bio: "Walked into a hackathon in 2024 with zero grand plans and built an AI voice agent that didn't sound like a robot. The original spark that refused to die.",
+  },
+  {
+    name: "Ayush Kulkarni",
+    role: "Chief Operating Officer",
+    bio: "Co-built the original hackathon prototype alongside Nivas. Now ensures Speaksy's operations, partnerships, and go-to-market engine run as smoothly as its voice agents sound.",
+  },
 ];
 
+/* ─── origin story timeline ─── */
 const timeline = [
-  ["2024", "The itch", "Our founders watch a Pune NBFC pay dollar rates for a voice bot that couldn't say 'साडेचार हजार' correctly. The question forms: why is Indian voice AI priced and built for America?"],
-  ["Early 2025", "First stack", "Speaksy's streaming pipeline hits sub-second round trips on real Exotel trunks. First Hinglish model trained on consented, PII-scrubbed Indian call audio."],
-  ["Mid 2025", "First customers", "A Mumbai collections team and a Hyderabad EdTech go live. The Marathi/Telugu campaigns outperform their human benchmarks in week two."],
-  ["Late 2025", "The graph engine", "Prompt spaghetti replaced by versioned dialogue graphs. Human handoff ships — AI does volume, humans close. All 10 gallery languages reach production quality."],
-  ["2026", "Scale", "1L+ calls a month across BFSI, D2C, EdTech, healthcare and logistics. Same mission, bigger phone bill: built in India, beats the world."],
+  {
+    year: "2024",
+    title: "The hackathon",
+    body: "<strong>Nivas Salla</strong> and <strong>Ayush Kulkarni</strong> walked into a hackathon with zero grand plans — just an idea and way too much caffeine. Build an AI voice agent that didn't sound like a robot reading a script. In that blur of sleepless coding and vending-machine snacks, they actually pulled it off. It was good. Like, \"wait, this actually works\" good.",
+  },
+  {
+    year: "2024–25",
+    title: "The shelf",
+    body: "A hackathon project is still just a hackathon project. They shipped it, shelved it, and life moved on. But good ideas don't stay buried.",
+  },
+  {
+    year: "Early 2026",
+    title: "The plot twist",
+    body: "<strong>Shashank Thamali</strong> and <strong>Sai Chaitanya Kareda</strong> stumbled onto the idea and couldn't stop thinking about it. No permission needed, no roadmap — just two people convinced this thing deserved a second life. They rebuilt, refined, and pushed it further than a weekend hackathon ever could.",
+  },
+  {
+    year: "Mid 2026",
+    title: "Full circle",
+    body: "The timelines collided. <strong>Shashank</strong> and <strong>Sai Chaitanya</strong>'s momentum met <strong>Nivas</strong> and <strong>Ayush</strong>'s original spark — and instead of two separate stories, it became one. Four builders, one obsession: making AI voice agents that actually sound human.",
+  },
+  {
+    year: "Now",
+    title: "Speaksy",
+    body: "They gave it a name that says exactly what it does — <strong>Speaksy</strong>, powered by <u><strong><em>SpeakSystems</em></strong></u>. Built by people who don't quit on good ideas. This is just the beginning.",
+  },
 ];
 
-const team = [
-  ["Manav Khanna", "Co-founder & CEO", "Ex-collections ops. Ran 400-seat dialer floors before deciding to automate his old job properly."],
-  ["Shruti Nair", "Co-founder & CTO", "Speech systems engineer. Obsessive about the last 100 milliseconds and the first three seconds of a call."],
-  ["Aniruddh Rao", "Voice ML Lead", "Trains the models that make 'नमस्कार' sound like home in nine scripts."],
-  ["Ketaki Deshmukh", "Head of Linguistics", "Guardian of honorifics, dialects and everything global platforms get wrong about Indian speech."],
-  ["Nandini Iyer", "Compliance & Trust", "Makes TRAI windows, DND scrubbing and DPDP residency non-negotiable platform defaults."],
-  ["Ravi Teja", "Solutions", "Turns 'our telecallers say this' into graph agents that say it better, in 10 languages."],
+/* ─── values ─── */
+const values = [
+  {
+    num: "01",
+    title: "Ideas that refuse to die",
+    body: "Speaksy isn't a boardroom idea. It's a hackathon project that got shelved, picked back up by the right people at the right time, and turned into something four founders are now building — full send, no brakes.",
+  },
+  {
+    num: "02",
+    title: "Bharat-first, not Bharat-later",
+    body: "Hindi and Tamil ship with the same care as Hinglish. The next 50 crore customers speak neither Silicon Valley's language nor its price points.",
+  },
+  {
+    num: "03",
+    title: "The phone call is sacred",
+    body: "For most of India, the call is still where trust forms and money moves. We treat every second of latency and every mispronounced name as a broken promise.",
+  },
+  {
+    num: "04",
+    title: "Builders who show up",
+    body: "We didn't plan this timeline. We just kept showing up. That's the whole vibe — built by people who don't quit on good ideas, and who obsess over the last 100 milliseconds.",
+  },
 ];
 
 export default function AboutPage() {
@@ -40,19 +93,19 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About Speaksy"
-        title="We build the voice India's businesses deserve."
-        subtitle="Global voice AI was priced in dollars and trained on American accents. We started Speaksy to flip both — state-of-the-art conversation technology, built in India, priced for India, fluent in India."
+        title="An idea that refused to die."
+        subtitle="Born at a hackathon in 2024. Shelved. Revived in 2026 by two builders who couldn't stop thinking about it. Four founders, one obsession — AI voice agents that actually sound human."
       />
 
-      {/* mission strip */}
+      {/* ── mission strip ── */}
       <section className="border-y border-line bg-surface/50 py-14">
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-y-8 px-6 text-center md:grid-cols-4">
-          {[
+          {([
+            ["4", "founders, one mission"],
             ["14", "languages in production"],
-            ["1L+", "calls handled monthly"],
             ["<800ms", "conversation latency"],
             ["₹3.99", "per live minute, from"],
-          ].map(([n, l], i) => (
+          ] as const).map(([n, l], i) => (
             <Reveal key={l} delay={i * 0.08} className="flex flex-col items-center gap-1">
               <span className="font-mono text-3xl font-semibold text-brand-400">{n}</span>
               <span className="text-sm text-muted">{l}</span>
@@ -61,18 +114,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* story timeline */}
+      {/* ── origin story timeline ── */}
       <section className="py-24">
         <div className="mx-auto max-w-4xl px-6">
-          <SectionHeading eyebrow="The Story" title="From a mispronounced number to a lakh+ calls a month." />
+          <SectionHeading
+            eyebrow="The Origin Story"
+            title="It started with a hackathon (like most good chaos does)."
+          />
           <div className="relative mt-14 flex flex-col gap-10 border-l border-brand-500/30 pl-8">
-            {timeline.map(([year, title, body], i) => (
-              <Reveal key={year} delay={i * 0.08}>
+            {timeline.map((item, i) => (
+              <Reveal key={item.year} delay={i * 0.08}>
                 <div className="relative">
                   <span className="absolute -left-[2.45rem] top-1 h-4 w-4 rounded-full border-2 border-brand-400 bg-background" />
-                  <p className="font-mono text-sm font-bold text-brand-400">{year}</p>
-                  <h3 className="mt-1 text-lg font-semibold">{title}</h3>
-                  <p className="mt-2 leading-relaxed text-muted">{body}</p>
+                  <p className="font-mono text-sm font-bold text-brand-400">{item.year}</p>
+                  <h3 className="mt-1 text-lg font-semibold">{item.title}</h3>
+                  <p className="mt-2 leading-relaxed text-muted" dangerouslySetInnerHTML={{ __html: item.body }} />
                 </div>
               </Reveal>
             ))}
@@ -80,50 +136,79 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* values */}
+      {/* ── the founders ── */}
       <section className="border-y border-line bg-surface/40 py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading eyebrow="What we believe" title="Four convictions we hire, build and price by." />
-          <div className="mt-14 grid gap-5 md:grid-cols-2">
-            {values.map(([icon, title, body], i) => (
-              <Reveal key={title} delay={(i % 2) * 0.1}>
-                <div className="card card-hover h-full rounded-2xl p-7">
-                  <span className="inline-flex rounded-md bg-brand-500/10 px-2 py-1 font-mono text-[11px] font-semibold text-brand-700">
-                    {icon}
-                  </span>
-                  <h3 className="mt-3 text-lg font-semibold">{title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{body}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* team */}
-      <section className="py-24">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading
             eyebrow="The Team"
-            title="Operators, linguists and latency obsessives."
-            subtitle="A team that has run dialer floors, trained speech models and argued about Marathi honorifics — sometimes in the same meeting."
+            title="Four builders who kept showing up."
+            subtitle="A hackathon duo who lit the spark, and two builders who turned it into fire — now building Speaksy full time, no brakes."
           />
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map(([name, role, bio], i) => (
-              <Reveal key={name} delay={(i % 3) * 0.08}>
-                <div className="card card-hover flex h-full flex-col gap-3 rounded-2xl p-6">
-                  <span className="brand-pill flex h-14 w-14 items-center justify-center rounded-2xl text-lg font-bold text-white">
-                    {name.split(" ").map((w) => w[0]).join("")}
-                  </span>
-                  <div>
-                    <h3 className="font-semibold">{name}</h3>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-brand-400">{role}</p>
+          <div className="mt-14 grid gap-5 sm:grid-cols-2">
+            {founders.map((f, i) => (
+              <Reveal key={f.name} delay={(i % 2) * 0.1}>
+                <div className="card card-hover flex h-full flex-col gap-4 rounded-2xl p-7">
+                  {/* avatar monogram */}
+                  <div className="flex items-center gap-4">
+                    <span className="brand-pill flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-lg font-bold text-white">
+                      {f.name
+                        .split(" ")
+                        .map((w) => w[0])
+                        .join("")}
+                    </span>
+                    <div>
+                      <h3 className="text-lg font-semibold">{f.name}</h3>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-brand-400">
+                        {f.role}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-sm leading-relaxed text-muted">{bio}</p>
+                  <p className="text-sm leading-relaxed text-muted">{f.bio}</p>
                 </div>
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── values ── */}
+      <section className="py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <SectionHeading
+            eyebrow="What we believe"
+            title="Four convictions we build by."
+          />
+          <div className="mt-14 grid gap-5 md:grid-cols-2">
+            {values.map((v, i) => (
+              <Reveal key={v.title} delay={(i % 2) * 0.1}>
+                <div className="card card-hover h-full rounded-2xl p-7">
+                  <span className="inline-flex rounded-md bg-brand-500/10 px-2 py-1 font-mono text-[11px] font-semibold text-brand-700">
+                    {v.num}
+                  </span>
+                  <h3 className="mt-3 text-lg font-semibold">{v.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{v.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── the quote ── */}
+      <section className="border-t border-line bg-surface/30 py-20">
+        <div className="mx-auto max-w-3xl px-6">
+          <Reveal>
+            <blockquote className="text-center">
+              <p className="text-xl font-medium leading-relaxed tracking-tight text-foreground sm:text-2xl">
+                &ldquo;We didn&rsquo;t plan this timeline. We just kept showing up. And honestly?
+                That&rsquo;s the whole vibe of Speaksy — built by people who don&rsquo;t quit on
+                good ideas.&rdquo;
+              </p>
+              <footer className="mt-6 text-sm text-muted">
+                — The Founding Team, Speaksy
+              </footer>
+            </blockquote>
+          </Reveal>
         </div>
       </section>
 
